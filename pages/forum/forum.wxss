@@ -1,0 +1,37 @@
+/* pages/forum/forum.wxss */
+.forumPage{
+    position: relative; /* ✅ 关键：作为绝对定位参照 */
+    background-color: rgb(234, 234, 234);
+    /* height: 100vh; */
+    height: 100vh;        /* 必须有高度 */
+    display: flex;
+    flex-direction: column;
+}
+.scrollarea {
+    flex: 1;              /* 占剩余空间 */
+    overflow: hidden;     /* 防止外层滚动 */
+}
+
+.postContainer{
+   
+    color: white;
+    padding: 20rpx;
+
+}
+.newPostimg{
+    position: fixed; /* ✅ 推荐用 fixed，而不是 absolute */
+    right: 30rpx;
+    bottom: 40rpx;
+    height: 90rpx;
+    width: 90rpx;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* ✅ 保证在最上层 */
+}
+.newPostimg .img{
+    width: 60%;
+    height: 60%;
+}

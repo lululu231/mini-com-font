@@ -1,0 +1,13 @@
+/* components/commentCard/commentCard.wxss */
+.commentContainer{
+    padding: 20rpx 0rpx;
+    margin: 20rpx 0rpx;    
+    border-radius: 5rpx;
+    background-color: white;
+    /* border-color: ;
+    border: 1rpx; */
+}
+.commentText{
+    background-color: cornflowerblue;
+    padding: 20rpx;
+}

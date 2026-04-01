@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="form-item">
+    <text class="label">社团名称*</text>
+    <input class="input" placeholder="请输入社团名称" bindinput="onInputChange" data-field="community_name"/>
+  </view>
+
+  <view class="form-item">
+    <text class="label">社团头像</text>
+    <button class="upload-btn" bindtap="chooseAvatar">上传头像</button>
+    <view wx:if="{{avatar_url}}" class="preview-container">
+      <image src="{{avatar_url}}" class="preview-img"></image>
+      <button class="delete-btn" bindtap="deleteAvatar">删除</button>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <text class="label">社团简介</text>
+    <textarea class="textarea" placeholder="请输入社团简介" bindinput="onInputChange" data-field="description"></textarea>
+  </view>
+
+  <view class="form-item">
+    <text class="label">申请证明*</text>
+    <button class="upload-btn" bindtap="chooseProof">上传文件</button>
+    <view wx:if="{{proofFileName}}" class="preview-container">
+      <text class="file-name">{{proofFileName}}</text>
+      <button class="delete-btn" bindtap="deleteProof">删除</button>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <button class="submit-btn" bindtap="submitCommunity">提交审核</button>
+  </view>
+</view>

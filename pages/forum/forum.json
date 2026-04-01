@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "searchBar":"/components/searchBar/searchBar",
+    "selectCommunity":"/components/selectCommunity/selectCommunity",
+    "postCard":"/components/postCard/postCard"
+  }
+}

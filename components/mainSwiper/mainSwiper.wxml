@@ -1,0 +1,6 @@
+<!--components/mainSwiper.wxml-->
+<swiper>
+  <swiper-item>
+    <image src="/assets/image/OIP.webp" mode="aspectFill" class="swiperimg"></image>
+  </swiper-item>
+</swiper>

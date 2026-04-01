@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "postItem":"/components/postCard/postItem/postItem",
+    "commentCard":"/components/commentCard/commentCard"
+  }
+}

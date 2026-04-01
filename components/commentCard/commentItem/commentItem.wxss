@@ -1,0 +1,23 @@
+/* components/commentCard/commentItem/commentItem.wxss */
+.commentItemContainer{
+    background-color: white;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(0, 0, 0, 0.153);
+    border-radius: 10rpx;
+}
+.commentItemTab{
+    display: flex;
+    align-items: center;
+}
+.commentName{
+    padding-left: 20rpx;
+}
+.commentAvatar{
+    width: 50rpx;
+    height: 50rpx;
+}
+.comment{
+    padding: 20rpx 5rpx;
+}

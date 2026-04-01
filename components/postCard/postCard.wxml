@@ -1,0 +1,7 @@
+<view class="container">
+  <postItem
+    wx:for="{{postList}}"
+    wx:key="topicId"
+    post="{{item}}"
+  />
+</view>

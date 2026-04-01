@@ -1,0 +1,26 @@
+<view class="allCommunity">
+<searchBar bind:search="onSearchInput"></searchBar>
+  <scroll-view scroll-y class="communityList">
+    <block wx:for="{{communities}}" wx:key="id">
+      <view class="communityCard" bindtap="enterCommunity" data-id="{{item.id}}">
+        <image class="communityAvatar" src="{{item.avatar_url || '/assets/image/default_avatar.png'}}" />
+        <view class="communityInfo">
+          <view class="communityName">{{item.community_name}}</view>
+          <view class="communityDesc">{{item.description}}</view>
+        </view>
+        <button 
+            class="joinBtn" 
+            catchtap="handleJoin" 
+            data-id="{{item.id}}"
+            disabled="{{item.relation !== 'none'}}"
+            >
+            {{
+                item.relation === 'joined' ? '已加入' :
+                item.relation === 'pending' ? '审核中' :
+                '申请加入'
+            }}
+            </button>
+      </view>
+    </block>
+  </scroll-view>
+</view>

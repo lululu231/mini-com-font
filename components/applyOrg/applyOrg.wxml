@@ -1,0 +1,9 @@
+<!--components/applyOrg/applyOrg.wxml-->
+<view class="container">
+    <view class="normal">
+    退出社团
+    </view>
+    <view wx:if="{{admin==='ADMIN'}}" class="admin">
+    管理成员
+    </view>
+</view>

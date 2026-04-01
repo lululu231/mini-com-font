@@ -1,0 +1,82 @@
+<!-- pages/profile/profile.wxml -->
+<view class="profilePage">
+
+<!-- 头像 -->
+<view class="card avatar-card">
+  <view class="label">头像</view>
+  <image 
+    class="avatar" 
+    src="{{user.avatar_url}}" 
+    bindtap="handleChooseAvatar"
+    style="pointer-events: {{editMode ? 'auto' : 'none'}}"
+  />
+</view>
+
+<!-- 昵称 -->
+<view class="card">
+  <view class="label">昵称</view>
+  <input 
+    class="input" 
+    value="{{user.nick_name}}" 
+    placeholder="请输入昵称"
+    data-field="nick_name"
+    bindinput="handleInput"
+    disabled="{{!editMode}}"
+  />
+</view>
+
+<!-- 学号 -->
+<view class="card">
+  <view class="label">学号</view>
+  <input 
+    class="input" 
+    value="{{user.student_id}}" 
+    placeholder="请输入学号"
+    data-field="student_id"
+    bindinput="handleInput"
+    disabled="{{!editMode}}"
+  />
+</view>
+
+<!-- 性别 -->
+<view class="card">
+  <view class="label">性别</view>
+  <picker 
+    mode="selector" 
+    range="{{genderOptions}}" 
+    value="{{genderIndex}}"
+    bindchange="handleGenderChange"
+    disabled="{{!editMode}}"
+  >
+    <view class="picker">
+      {{genderOptions[genderIndex]}}
+    </view>
+  </picker>
+</view>
+
+<!-- 手机号 -->
+<view class="card">
+  <view class="label">手机号</view>
+  <input 
+    class="input" 
+    type="number"
+    value="{{user.phone_number}}" 
+    placeholder="请输入手机号"
+    data-field="phone_number"
+    bindinput="handleInput"
+    disabled="{{!editMode}}"
+  />
+</view>
+
+<!-- 按钮区 -->
+<view class="btn-group">
+  <button class="save-btn" bindtap="handleToggleEdit">
+    {{editMode ? '保存' : '修改个人信息'}}
+  </button>
+
+  <button class="club-btn" bindtap="handleCreateClub">
+    申请创建新社团
+  </button>
+</view>
+
+</view>

@@ -1,0 +1,99 @@
+/* components/section3/section3.wxss */
+.themeContainer{
+    background-color: white;
+    padding: 20rpx;
+    flex: 1;
+    margin: 5rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.section3Text{
+    font-weight: 600;
+    font-size: 30rpx;
+    /* margin: 20rpx; */
+}
+.themeCard1{
+    background-color: antiquewhite;
+    display: flex;
+    width: 180rpx;
+    flex-wrap: wrap;
+    margin-top:20rpx ;
+    border-radius: 10rpx;
+    padding: 10rpx;
+    justify-content: space-between;
+    height: 160rpx;
+    overflow: hidden;
+}
+.memberCard1{
+    display: flex;
+    flex-direction: column;
+    width: 60rpx;
+}
+
+.memberImg{
+    width: 50rpx;
+    height: 50rpx;
+    margin: 5rpx auto;
+    border-radius: 50%;
+}
+.textCard1{
+    text-align: center;
+    font-size: 20rpx;
+}
+.memberMore{
+    margin-top: 10rpx;
+    border-radius: 30rpx;
+    padding: 10rpx;
+    font-size: 16rpx;
+    text-align: center;
+    font-weight: 600;
+    background-color: antiquewhite;
+}
+.themeCard2{
+    width: 200rpx;
+    height: 235rpx;
+    overflow: hidden;
+    margin-top: 20rpx;
+    position: relative; /* 作为绝对定位的参考 */
+}
+.actImg{
+    width: 100%;
+    height: 100%;
+}
+.actText{
+    position: absolute;   /* ✅ 必须有 */
+    bottom: 10rpx;        /* 贴底 */
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: black;
+    background-color: aqua;
+    font-size: 22rpx;
+
+    white-space: nowrap;
+    padding: 15rpx;
+    font-weight: 600;
+    border-radius: 30rpx;
+}
+.themeCard3Container{
+    margin-top: 20rpx;
+    display: flex;
+    width: 126rpx;
+    height: 235rpx;
+    flex-direction: column;
+    gap: 10rpx; /* 推荐用 gap 控制间距 */
+    justify-content: space-between;
+}
+
+.themeCard3{
+    
+    background-color: antiquewhite;
+    border-radius: 30rpx;
+}
+
+.themeCard3Text{
+    padding: 10rpx;
+    text-align: center;
+    font-size: 20rpx;
+    font-weight: 600;
+}

@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="searchBarPart">
+    <image 
+      src="/assets/image/搜索.png" 
+      mode="aspectFill" 
+      class="searchBarimg"
+    ></image>
+    <input 
+      class="searchInput"
+      placeholder="搜索社团 / 关键词"
+      placeholder-class="placeholder"
+      bindinput="onInput" 
+    />
+  </view>
+</view>

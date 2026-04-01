@@ -1,0 +1,23 @@
+/* components/searchBar.wxss */
+.container{
+    background-color: white;
+    padding: 20rpx;
+    position: static;
+}
+.searchBarPart{
+    /* margin: 40rpx; */
+    height: 80rpx;
+    border-radius: 30rpx;
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    align-items: center;   /* 垂直居中 */
+    padding: 0 20rpx;      /* 左右留白 */
+}
+
+.searchBarimg{
+    width: 40rpx;
+    height: 40rpx;
+}
+.searchInput{
+    margin-left: 10rpx;
+}

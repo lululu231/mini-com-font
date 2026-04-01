@@ -1,0 +1,14 @@
+<view class="container">
+  <scroll-view class="scrollarea" scroll-x="true">
+    <view class="list">
+      <section1 
+        wx:for="{{comItem}}" 
+        wx:for-item="item" 
+        wx:key="itemID"
+        comName="{{item.community_name}}"
+        imgSrc="{{item.avatar_url}}"
+        class="commItem"
+      />
+    </view>
+  </scroll-view>
+</view>

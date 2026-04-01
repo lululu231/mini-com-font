@@ -1,0 +1,32 @@
+/* 部门区域 */
+.department-wrapper {
+    margin-top: 30rpx;
+  }
+  
+  .department-list {
+    display: flex;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+  }
+  
+  .department-card {
+    min-width: 200rpx;
+    background: #409eff; /* 蓝色背景 */
+    border-radius: 16rpx;
+    padding: 20rpx 15rpx;
+    margin-right: 20rpx;
+    color: #ffffff;
+    box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  }
+  
+  .dept-name {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+  }
+  
+  .dept-info {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    opacity: 0.9;
+  }

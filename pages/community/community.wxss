@@ -1,0 +1,69 @@
+/* pages/community/community.wxss */
+.community{
+    background-color: rgb(234, 234, 234);
+    padding: 0rpx 40rpx;
+}
+.optionTab{
+    display: flex;
+    justify-content: space-between;
+}
+.secondTab{
+    margin-top: 40rpx;
+    font-weight: 600;
+    padding: 10rpx 0;
+    font-size: 30rpx;
+}
+.thridTab{
+    background-color: white;
+    margin-top: 40rpx;
+    padding: 10rpx 20rpx;
+    font-weight: 600;
+    font-size: 28rpx;
+    color: rgb(29, 81, 225);
+    /* ❗重点优化 */
+    border-radius: 20rpx;
+    display: inline-block;
+}
+.ComhotCom{
+    margin-bottom: 20rpx;
+}
+.mainSwipercom{
+    margin: 20rpx 0rpx;
+    background-color: white;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.mainSwipertext{
+    margin: 20rpx;
+    font-weight: 600;
+}
+.iCardContainer{
+    display: flex;
+    /* align-items: center;          ✅ 垂直居中 */
+    background-color: white;
+    margin: 2rpx;
+    border-radius: 20rpx;
+    box-shadow: 2rpx 2rpx 2rpx rgb(183, 181, 181);
+    margin-bottom: 20rpx;
+    justify-content: space-between;
+}
+.communityMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* pages/community/community.wxss */
+.communityPanel {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 10rpx;
+    border-radius: 6rpx;
+  }
+  
+  .communityItem {
+    padding: 10rpx;
+    border-bottom: 1px solid #eee;
+  }
+  .communityItem:last-child {
+    border-bottom: none;
+  }

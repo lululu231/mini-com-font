@@ -1,0 +1,62 @@
+/* components/section2/section2.wxss */
+
+.container{
+    background-color: white;
+    margin: 20rpx 0;
+    border-radius: 20rpx;
+
+    display: flex;
+    padding: 20rpx;
+}
+
+.imgSrc{
+    margin-right: 20rpx;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 16rpx;
+
+    /* 防止图片变形 */
+    flex-shrink: 0;
+}
+
+.middlePart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.actName{
+    font-weight: 600;
+    font-size: 30rpx;
+    margin-top: 10rpx;
+
+    /* 防止标题过长撑开 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.actBaseContainer{
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.actBaseimg{
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.actBase{
+    color: dimgrey;
+    margin-left: 10rpx;
+    font-size: 24rpx;
+}
+
+.actStatus1{
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 26rpx;
+    color: rgb(40, 91, 219);
+}

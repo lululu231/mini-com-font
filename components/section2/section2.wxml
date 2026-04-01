@@ -1,0 +1,16 @@
+<!--components/section2/section2.wxml-->
+<view class="container">
+    <image src="{{imgSrc}}" mode="aspectFill" class="imgSrc"></image>
+    <view class="middlePart">
+        <view class="actName">Name</view>
+        <view class="acTime">acTime</view>
+        <view class="actBaseContainer">
+            <image src="/assets/image/地点.png" mode="aspectFill" class="actBaseimg"></image>
+            <view class="actBase">actBase</view>
+        </view>
+    </view>
+    <view class="actStatus1">
+    <view class="actStatus2">actStatus</view>
+    </view>
+    
+</view>
