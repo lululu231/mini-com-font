@@ -1,0 +1,5 @@
+<!--components/section1/section1.wxml-->
+<view class="container">
+    <image src="{{imgSrc}}" mode="aspectFill" class="imgSrc"></image>
+    <view class="comName">{{comName}}</view>
+</view>

@@ -1,0 +1,18 @@
+<!--components/commentCard/commentItem/commentItem.wxml-->
+<view class="commentItemContainer">
+    <view class="commentItemTab">
+        <image src="{{root.user_avatar}}" mode="aspectFill" class="commentAvatar"></image>
+        <view class="commentName">{{root.user_name}}</view>
+    </view>
+    <view wx-if="{{ATcontent}}" class="comment">回复：{{ATcontent}}</view>
+    <view class="comment">{{root.content}}</view>
+    <view class="comment"
+    wx:for="{{root.children}}"
+    wx:for-item="item"
+    wx:key="id"
+    >
+    <commentItem
+    root="{{item}}"
+    ></commentItem>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<!--components/commentCard/commentCard.wxml-->
+<view class="commentContainer">
+    <view class="commentText">全部评论</view>
+    <view class="comment"
+    wx:for="{{commentTree}}"
+    wx:for-item="item"
+    wx:key="id"
+    >
+    <commentItem
+    root="{{item}}"
+    ></commentItem>
+    </view>
+</view>

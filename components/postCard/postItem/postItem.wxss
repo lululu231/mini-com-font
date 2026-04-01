@@ -1,0 +1,74 @@
+/* components/postCard/postItem/postItem.wxss */
+
+.postCard{
+    border-radius: 5rpx;
+    background-color: white;
+    padding: 10rpx 20rpx;
+    /* margin-bottom: 5rpx; */
+    color: black;
+}
+.postHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.psotAvatar{
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50rpx;
+}
+.postHeaderS2{
+    padding: 10rpx 30rpx;
+
+}
+.postInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.postName{
+    padding:10rpx 30rpx 10rpx 0rpx;
+    max-width: 200rpx;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    /* margin-right: 20rpx; */
+}
+.postCommunity{
+    background-color: cornflowerblue;
+    padding: 10rpx ;
+    border-radius: 10rpx;
+    float:right;
+}
+.createdAt{
+    padding: 10rpx 0rpx;
+    font-size: 25rpx;
+    font-weight: 600;
+    color: rgb(172, 172, 172);
+}
+.postMain{
+    max-height: 400rpx;
+    padding: 10rpx 5rpx;
+}
+.postBottom{
+    display: flex;
+    align-items: center;
+    padding: 10rpx;
+    background-color: white;
+    margin-bottom: 5rpx;
+    color: black;
+}
+.bottomImg{
+    height: 30rpx;
+    width: 30rpx;
+    margin:0rpx 10rpx;
+}
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rpx;
+    padding-top: 20rpx;
+  }
+  
+.image-list .imgItem {
+  width: 30%;
+  border-radius: 10rpx;
+}

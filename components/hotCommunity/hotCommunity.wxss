@@ -1,0 +1,25 @@
+/* components/hotCommunity/hotCommunity.wxss */
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20rpx ;
+    width: 100%;
+}
+.commItem{
+    flex:1;
+    
+}
+.scrollarea {
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .list {
+    display: flex;
+  }
+  
+  .commItem {
+    width: 200rpx;
+    margin-right: 20rpx;
+    flex-shrink: 0;
+  }

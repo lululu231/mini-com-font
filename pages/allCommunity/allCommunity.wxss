@@ -1,0 +1,82 @@
+.allCommunity {
+    background-color: #f7f9fc;
+    padding: 24rpx;
+  }
+  
+  .communityList {
+    padding: 20rpx 0rpx;
+  }
+  
+  /* 卡片 */
+  .communityCard {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    margin-bottom: 24rpx;
+    border-radius: 24rpx;
+    padding: 24rpx;
+    box-shadow: 0 8rpx 24rpx rgba(22, 119, 255, 0.08);
+    transition: all 0.25s ease;
+  }
+  
+  /* 点击态（小程序没有hover，用active替代） */
+  .communityCard:active {
+    transform: scale(0.97);
+    box-shadow: 0 4rpx 12rpx rgba(22, 119, 255, 0.12);
+  }
+  
+  /* 头像 */
+  .communityAvatar {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    margin-right: 24rpx;
+    object-fit: cover;
+    border: 4rpx solid #e6f0ff;
+  }
+  
+  /* 信息区域 */
+  .communityInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* 标题 */
+  .communityName {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #1677ff;
+    margin-bottom: 8rpx;
+  }
+  
+  /* 描述 */
+  .communityDesc {
+    font-size: 24rpx;
+    color: #888;
+    line-height: 1.4;
+  }
+  
+  /* 按钮 */
+  .joinBtn {
+    background: linear-gradient(135deg, #1677ff, #4096ff);
+    color: #fff;
+    border-radius: 999rpx;
+    padding: 12rpx 26rpx;
+    font-size: 24rpx;
+    border: none;
+    box-shadow: 0 4rpx 12rpx rgba(22, 119, 255, 0.3);
+  }
+  
+  /* 按钮点击 */
+  .joinBtn:active {
+    transform: scale(0.92);
+  }
+  
+  /* 已加入状态 */
+  .joinBtn[disabled] {
+    background: #e5e7eb;
+    color: #999;
+    box-shadow: none;
+  }

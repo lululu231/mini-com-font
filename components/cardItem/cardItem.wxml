@@ -1,0 +1,14 @@
+<view 
+  class="card card--{{size}} {{customClass}} {{clickable ? 'card--clickable' : ''}}"
+  style="{{customStyle}}"
+  bindtap="handleClick"
+>
+  <image 
+    class="card-img" 
+    src="{{item.imgItem}}" 
+    mode="aspectFill"
+  />
+  <view class="card-text">
+    {{item.itemName}}
+  </view>
+</view>

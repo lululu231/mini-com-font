@@ -1,0 +1,10 @@
+<!--pages/postPage/postPage.wxml-->
+<view class="postPage">
+    <postItem 
+    post="{{post}}"
+    class="postItem">
+    </postItem>
+    <commentCard>
+    </commentCard>
+    
+</view>

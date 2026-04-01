@@ -1,0 +1,9 @@
+/* pages/postPage/postPage.wxss */
+.postPage{
+    background-color: rgb(234, 234, 234);
+    padding: 10rpx 0rpx;
+}
+
+.postItem{
+    border-radius: 1rpx;
+}

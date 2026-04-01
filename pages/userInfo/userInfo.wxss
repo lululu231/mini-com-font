@@ -1,0 +1,72 @@
+/* pages/profile/profile.wxss */
+
+.profilePage {
+    padding: 20rpx;
+    background: #f5f7fa;
+    min-height: 100vh;
+  }
+  
+  /* 卡片 */
+  .card {
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* 标签 */
+  .label {
+    font-size: 28rpx;
+    color: #333;
+  }
+  
+  /* 输入框 */
+  .input {
+    text-align: right;
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  /* picker */
+  .picker {
+    color: #666;
+  }
+  
+  /* 头像卡片 */
+  .avatar-card {
+    justify-content: space-between;
+  }
+  
+  .avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background: #eee;
+  }
+  
+  /* 按钮组 */
+  .btn-group {
+    margin-top: 40rpx;
+  }
+  
+  /* 保存按钮 */
+  .save-btn {
+    background-color: cornflowerblue;
+    color: #fff;
+    border-radius: 50rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  /* 创建社团按钮 */
+  .club-btn {
+    background-color: #fff;
+    color: cornflowerblue;
+    border: 2rpx solid cornflowerblue;
+    border-radius: 50rpx;
+  }
+  .input[disabled] {
+    color: #999;
+  }

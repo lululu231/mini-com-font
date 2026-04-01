@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+        "section1":"../section1/section1"
+  }
+}

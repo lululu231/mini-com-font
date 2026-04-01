@@ -1,0 +1,49 @@
+<!--components/section3/section3.wxml-->
+<view class="themeContainer">
+    <view wx:if="{{theme===1}}" >
+    <view class="section3Text">
+        社团成员
+    </view>
+    <view class="themeCard1">
+        <view 
+        class="memberCard1" 
+        wx:for="{{mockMembers}}"
+        wx:for-item="item" 
+        wx:key="id"
+        >
+        <image src="{{item.avatar}}" mode="aspectFill" class="memberImg"></image>
+        <view class="textCard1">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="memberMore">查看更多 》</view>
+    </view>
+    <!-- 社团活动 -->
+    <view wx:if="{{theme===2}}" >
+    <view class="section3Text">
+        社团活动
+    </view>
+    <view class="themeCard2">
+    <image src="/assets/image/activtytest.png" mode="aspectFill" class="actImg"></image>
+    <!-- <view class="card-mask"> -->
+    <text class="actText">点击报名</text>
+    <!-- </view> -->
+    </view>
+    </view>
+    <!-- 社团论坛 -->
+    <view wx:if="{{theme===3}}">
+    <view class="section3Text">
+        社团论坛
+    </view>
+    <view class="themeCard3Container">
+        <view class="themeCard3">
+    <view class="themeCard3Text">进入论坛</view>
+    </view>
+    <view class="themeCard3">
+    <view class="themeCard3Text">发布帖子</view>
+    </view>
+    <view class="themeCard3">
+    <view class="themeCard3Text">查看公告</view>
+    </view></view>
+    
+    </view>
+</view>

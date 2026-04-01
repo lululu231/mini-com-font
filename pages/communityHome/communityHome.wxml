@@ -1,0 +1,30 @@
+<view class="container">
+  <!-- 社团头像部分 -->
+  <view class="avatar-wrapper">
+    <image 
+      src="{{community.avatar_url}}" 
+      mode="aspectFill" 
+      class="avatar"
+    ></image>
+    <text class="community-name">{{community.community_name}}</text>
+  </view>
+
+  <!-- 社团简介部分 -->
+  <view class="description-wrapper">
+    <text class="description-title">社团简介</text>
+    <text class="description-content">{{community.description}}</text>
+  </view>
+
+  <!-- 部门预览表 -->
+  <view class="department-wrapper">
+    <text class="description-title">部门预览</text>
+    <scroll-view class="department-list" scroll-x>
+      <block wx:for="{{departments}}" wx:for-item="dept" wx:key="id">
+        <view class="department-card">
+          <text class="dept-name">{{dept.name}}</text>
+          <text class="dept-info">{{dept.info}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

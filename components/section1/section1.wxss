@@ -1,0 +1,21 @@
+/* components/section1/section1.wxss */
+.container{
+    background-color: white;
+    height: 260rpx;
+    width:  190rpx;
+    border-radius: 5%;
+    margin:10rpx;
+    box-shadow: 2px 2px 2px rgb(183, 181, 181);
+}
+.imgSrc {
+    height: 200rpx;
+    width:  190rpx;
+    border-radius: 5%;
+  }
+.comName{
+    padding: 0rpx 15rpx;
+    text-align: center;
+    overflow: hidden;        /* 超出隐藏 */
+    text-overflow:ellipsis; /* 显示 ... */
+    white-space: nowrap;     /* 不换行 */
+}

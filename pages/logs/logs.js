@@ -14,5 +14,6 @@ Page({
         }
       })
     })
+    ///console.log('logs',wx.getStorageSync('logs'))
   }
 })

@@ -1,0 +1,19 @@
+<view class="mainPage">
+    <scroll-view class="scrollarea"  scroll-y type="list">
+    <view class="mainTab">
+        <view class="leftTab">{{welcome}}，{{userNickname}}</view>
+        <image class="rightTab" src="{{avatarUrl}}"></image>
+    </view>
+    <centerBoard></centerBoard>
+    <view class="optionTab">
+    <view class="secondTab">热门社团</view>
+    <view class="thridTab" bind:tap="handleAllClub">查看更多 》</view>
+    </view>
+    <hotCommunity
+    comItem="{{communities}}"></hotCommunity>
+    <view class="optionTab">
+    <view class="secondTab">最新活动</view>
+    <view class="thridTab">查看更多 》</view></view>
+    <newActivty></newActivty>
+</scroll-view>
+</view>

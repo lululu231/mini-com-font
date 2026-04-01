@@ -1,0 +1,44 @@
+/* pages/mainPage/centerBoard/centerBoard.wxss */
+.container{
+    display:flex;
+    background-color: rgb(234, 234, 234);
+    margin-bottom:  10px  ;
+    align-self: start;
+    flex-direction:column;
+    margin: 0rpx 5rpx;
+
+}
+.iCardContainer{
+    background-color: white;
+    padding: 10rpx ;
+    border-radius: 20rpx;
+    box-shadow: 2px 2px 2px rgb(183, 181, 181);
+
+}
+.iCard{
+    margin:10rpx;
+}
+
+.swiper{
+    margin-bottom: 10px;
+    background-color:aliceblue;
+    border-radius: 20rpx;
+    overflow: hidden; /* 防止溢出 */
+}
+/* .swiper-inner {
+    height: 100%;
+} */
+.iCardContainer{
+    display:flex;
+    justify-content:  space-between ;
+
+}
+.imgCard{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 20rpx;
+}
+.cardFont{
+    margin:4rpx;
+    font-size: 15px;
+}

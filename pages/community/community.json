@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "hotCommunity":"/components/hotCommunity/hotCommunity",
+    "mainSwiper":"/components/mainSwiper/mainSwiper",
+    "cardItem":"/components/cardItem/cardItem",
+    "section3":"/components/section3/section3",
+    "applyOrg":"/components/applyOrg/applyOrg"
+  }
+}

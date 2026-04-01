@@ -1,0 +1,48 @@
+<!-- pages/community/community.wxml -->
+<view class="community">
+  <scroll-view class="scrollarea" scroll-y type="list">
+    <!-- 顶部切换按钮 -->
+    <view class="optionTab">
+      <view class="secondTab">当前社团：{{nowCommunity.community_name || '未选择'}}</view>
+      <view class="thridTab" bindtap="toggleCommunityPanel">切换社团 》</view>
+    </view>
+
+    <!-- 切换社团面板 -->
+    <view wx:if="{{showCommunityPanel}}" class="communityPanel">
+      <block wx:for="{{joinedCommunities}}" wx:key="id">
+        <view class="communityItem" bindtap="switchCommunity" data-id="{{item.id}}">
+          {{item.community_name}}
+        </view>
+      </block>
+    </view>
+
+    <!-- 轮播图 -->
+    <view class="mainSwipercom">
+      <mainSwiper></mainSwiper>
+      <view class="mainSwipertext">{{solgan}}</view>
+    </view>
+
+    <!-- 社团tab -->
+    <view class="iCardContainer">
+      <cardItem
+        wx:for="{{cardItem}}"
+        wx:key="itemID"
+        item="{{item}}"
+        size="medium"
+      />
+    </view>
+
+    <!-- 主界面 -->
+    <view class="communityMain">
+      <section3 theme="1"></section3>
+      <section3 theme="2"></section3>
+      <section3 theme="3"></section3>
+    </view>
+
+    <!-- 管理员操作 -->
+    <view>
+      <applyOrg admin="{{admin1}}"></applyOrg>
+      <applyOrg admin="{{admin0}}"></applyOrg>
+    </view>
+  </scroll-view>
+</view>

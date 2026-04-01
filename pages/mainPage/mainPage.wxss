@@ -1,0 +1,52 @@
+.mainPage{
+    background-color: rgb(234, 234, 234);
+    padding: 40rpx;
+}
+
+.container{
+    margin: 40rpx 0;
+}
+
+.mainTab {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.leftTab {
+    font-size: 32rpx;
+    font-weight: 500;
+}
+
+.rightTab {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.optionTab{
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondTab{
+    margin-top: 40rpx;
+    font-weight: 600;
+    padding: 10rpx 0;
+    font-size: 30rpx;
+}
+
+.thridTab{
+    background-color: white;
+    margin-top: 40rpx;
+    padding: 10rpx 20rpx;
+    font-weight: 600;
+    font-size: 28rpx;
+    color: rgb(29, 81, 225);
+
+    /* ❗重点优化 */
+    border-radius: 20rpx;
+    display: inline-block;
+}

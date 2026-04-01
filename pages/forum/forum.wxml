@@ -1,0 +1,19 @@
+<!--pages/forum/forum.wxml-->
+<view class="forumPage">
+<searchBar></searchBar>
+<selectCommunity 
+curTab="{{curTab}}"
+tabData="{{tabList}}"
+bind:change="handleTabChange"
+/>
+    <scroll-view class="scrollarea"  scroll-y type="list">
+        <view class="postContainer">
+            <postCard
+            postList="{{postList}}"
+            ></postCard>
+        </view>
+    </scroll-view>
+    <view class="newPostimg" bind:tap="newpostTap">
+    <image src="/assets/image/加.png" mode="aspectFill" class="img"></image>
+    </view>
+</view>

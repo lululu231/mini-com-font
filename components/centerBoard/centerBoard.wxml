@@ -1,0 +1,20 @@
+<!--pages/mainPage/centerBoard/centerBoard.wxml-->
+
+<view class="container">
+    <view class="swiper">
+        <mainSwiper ></mainSwiper>
+    </view>
+    <view class="iCardContainer">
+  <view 
+    class="iCard" 
+    wx:for="{{cardItem}}" 
+    wx:for-item="item" 
+    wx:key="itemID"
+    data-id="{{item.itemID}}"
+    bind:tap="handleRoute"
+  >
+    <image src="{{item.imgItem}}" mode="aspectFill" class="imgCard"></image>
+    <view class="cardFont">{{item.itemName}}</view>
+  </view>
+</view>
+</view>

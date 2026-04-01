@@ -1,0 +1,29 @@
+/* components/applyOrg/applyOrg.wxss */
+.container{
+    display: flex;
+    background-color: white;
+    margin: 20rpx 0rpx;
+    border-radius: 10rpx;
+    padding: 10rpx;
+    /* width: 100%; */
+    justify-content: space-between;
+}
+.normal{
+    background-color: antiquewhite;
+    padding: 20rpx;
+    flex: 1;
+    border-radius: 50rpx;
+    text-align: center;
+    font-weight: 600;
+    margin: 5rpx;
+}
+.admin{
+    background-color: aliceblue;
+    padding: 20rpx;
+    flex: 1;
+    font-weight: 600;
+    border-radius: 50rpx;
+    text-align: center;
+    margin: 5rpx;
+
+}

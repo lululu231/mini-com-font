@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+            "centerBoard": "/components/centerBoard/centerBoard",
+            "hotCommunity":"/components/hotCommunity/hotCommunity",
+            "newActivty":"/components/newActivty/newActivty"
+        }
+}

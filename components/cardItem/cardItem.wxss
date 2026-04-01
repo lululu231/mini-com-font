@@ -1,0 +1,43 @@
+/* components/cardItem/cardItem.wxss */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx 0rpx;
+    border-radius: 20rpx;
+    background: #fff;
+    transition: all 0.2s;
+  }
+  
+  /* 尺寸控制（核心） */
+  .card--small {
+    width: 120rpx;
+  }
+  
+  .card--medium {
+    width: 160rpx;
+  }
+  
+  .card--large {
+    width: 200rpx;
+  }
+  
+  /* 图片 */
+  .card-img {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 16rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  /* 文字 */
+  .card-text {
+    font-weight: 500;
+    font-size: 24rpx;
+    color: #333;
+  }
+  
+  /* 可点击态 */
+  .card--clickable:active {
+    transform: scale(0.95);
+  }

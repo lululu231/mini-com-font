@@ -1,7 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/mainPage/mainPage",
+    "pages/community/community",
+    "pages/userInfo/userInfo",
+    "pages/forum/forum",
+    "pages/postPage/postPage",
+    "pages/newPostPage/newPostPage",
+    "pages/newCommunity/newCommunity",
+    "pages/allCommunity/allCommunity",
+    "pages/communityHome/communityHome"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -11,5 +20,33 @@
   "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents", 
+  "tabBar": { 
+    "list": [ 
+        { 
+            "pagePath": "pages/mainPage/mainPage", 
+            "text": "首页",
+            "iconPath": "/assets/image/首页.png", 
+            "selectedIconPath": "/assets/image/首页.png" 
+        },
+        { 
+            "pagePath": "pages/forum/forum", 
+            "text": "论坛",
+            "iconPath": "/assets/image/论坛.png", 
+            "selectedIconPath": "/assets/image/论坛.png" 
+        },
+        { 
+            "pagePath": "pages/community/community", 
+            "text": "社团",
+            "iconPath": "/assets/image/社群.png", 
+            "selectedIconPath": "/assets/image/社群.png" 
+        },
+        { 
+            "pagePath": "pages/userInfo/userInfo", 
+            "text": "个人中心",
+            "iconPath": "/assets/image/我的.png", 
+            "selectedIconPath": "/assets/image/我的.png" 
+        }
+    ]
+    }
 }
