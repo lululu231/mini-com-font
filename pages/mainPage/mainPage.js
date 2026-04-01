@@ -51,7 +51,10 @@ Page({
         const userInfo = wx.getStorageSync('userInfo');
         const userId = userInfo?.userId;
     
-        request({ url: '/community/all', method: 'GET' })
+        request({
+            url: '/community/all',
+            method: 'GET'
+          })
           .then(res => {
             if (res.code === 0) {
               const communities = res.data.slice(0, 5);

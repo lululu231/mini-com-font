@@ -6,7 +6,8 @@ Page({
         avatar_url: '',
         description: '',
         proofFilePath: '',
-        proofFileName: ''
+        proofFileName: '',
+        submit:1
     },
   
     onInputChange(e) {
@@ -49,6 +50,7 @@ Page({
     submitCommunity() {
         const userInfo = wx.getStorageSync('userInfo');
         console.log('点击审核按钮', userInfo);
+        
         const { userId } = userInfo || {};
       const { community_name, avatar_url, description, proofFilePath } = this.data;
   
@@ -142,6 +144,9 @@ Page({
             wx.showToast({ title: '提交失败', icon: 'none' });
           }
         });
+        this.setData({
+            submit:!this.data.submit
+        })
       }).catch(() => {
         wx.showToast({ title: '文件上传失败', icon: 'none' });
       });

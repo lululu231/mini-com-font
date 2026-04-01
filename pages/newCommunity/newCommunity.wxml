@@ -28,6 +28,7 @@
   </view>
 
   <view class="form-item">
-    <button class="submit-btn" bindtap="submitCommunity">提交审核</button>
+    <button class="submit-btn" bindtap="submitCommunity" wx:if="{{submit}}">提交审核</button>
+    <button class="submit-btn" wx:else="{{!submit}}">已提交</button>
   </view>
 </view>
