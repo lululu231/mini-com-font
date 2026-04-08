@@ -1,0 +1,120 @@
+.container {
+    padding: 24rpx;
+    background: #f4f7ff;
+    min-height: 100vh;
+  }
+  
+  /* 卡片 */
+  .card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 24rpx;
+    padding: 24rpx;
+    margin-bottom: 16rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2rpx);
+  }
+  
+  /* 头像 */
+  .avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 24rpx;
+    object-fit: cover;
+    border: 2rpx solid #e0e0e0;
+  }
+  
+  /* 信息区 */
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 第一行：昵称 + 性别 */
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .gender {
+    margin: 0rpx 10rpx; 
+    font-size: 26rpx;
+    color: #888;
+  }
+  
+  /* 手机号 */
+  .phone {
+    font-size: 24rpx;
+    color: #555;
+    margin-top: 8rpx;
+  }
+  
+  /* 标签行：部门 + 职位 */
+  .tags {
+    margin-top: 12rpx;
+    display: flex;
+    gap: 12rpx;
+    flex-wrap: wrap;
+  }
+  
+  /* 通用标签样式 */
+  .tag {
+    font-size: 22rpx;
+    padding: 6rpx 14rpx;
+    border-radius: 22rpx;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  /* 身份角色 */
+  .role.president {
+    background: #fff0f0;
+    color: #ff4d4f;
+    border: 1rpx solid #ffccc7;
+  }
+  
+  .role.minister {
+    background: #e6f4ff;
+    color: #096dd9;
+    border: 1rpx solid #91d5ff;
+  }
+  
+  .role.member {
+    background: #f5f5f5;
+    color: #666;
+    border: 1rpx solid #d9d9d9;
+  }
+  
+  /* 部门 */
+  .dept {
+    background: #f0f5ff;
+    color: #1d39c4;
+    border: 1rpx solid #adc6ff;
+  }
+  
+  /* 职位 */
+  .position {
+    background: #fffbe6;
+    color: #d48806;
+    border: 1rpx solid #ffe58f;
+  }
+  
+  /* 空状态 */
+  .empty {
+    text-align: center;
+    margin-top: 120rpx;
+    font-size: 26rpx;
+    color: #999;
+  }

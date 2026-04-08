@@ -13,7 +13,7 @@
     comItem="{{communities}}"></hotCommunity>
     <view class="optionTab">
     <view class="secondTab">最新活动</view>
-    <view class="thridTab">查看更多 》</view></view>
-    <newActivty></newActivty>
+    <view class="thridTab" bind:tap="goActivityAll">查看更多 》</view></view>
+    <newActivty activities="{{activities}}"></newActivty>
 </scroll-view>
 </view>

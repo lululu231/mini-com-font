@@ -1,0 +1,76 @@
+<!-- pages/communityManage/communityManage.wxml -->
+<view class="container">
+
+<!-- 顶部标题 -->
+<view class="header">
+  <text class="section-title">社团管理</text>
+</view>
+
+<!-- 核心功能 -->
+<view class="section">
+  <text class="block-title">快捷操作</text>
+
+  <view class="card-container"> 
+    <view class="card" bindtap="goCreateDepartment">
+      <text class="icon">🏢</text>
+      <text class="title">新建部门</text>
+      <text class="sub">管理组织结构</text>
+    </view>
+
+    <view class="card" bindtap="goCreateActivity">
+      <text class="icon">🎯</text>
+      <text class="title">发布活动</text>
+      <text class="sub">组织活动</text>
+    </view>
+
+    <view class="card" bindtap="goCreateNotice">
+      <text class="icon">📢</text>
+      <text class="title">发布公告</text>
+      <text class="sub">通知成员</text>
+    </view>
+
+     <!-- ✅ 新增：入社申请 -->
+     <view class="card" bindtap="goApplyManage">
+      <text class="icon">📥</text>
+      <text class="title">入社申请</text>
+      <text class="sub">审核加入请求</text>
+    </view>
+  </view>
+</view>
+
+<!-- 管理入口 -->
+<view class="section">
+  <text class="block-title">管理入口</text>
+
+  <view class="card-container">
+
+    <view class="card" bindtap="goMemberManage">
+      <text class="icon">👥</text>
+      <text class="title">成员管理</text>
+      <text class="sub">成员信息维护</text>
+    </view>
+
+    <view class="card" bindtap="goDepartmentManage">
+      <text class="icon">🏬</text>
+      <text class="title">部门管理</text>
+      <text class="sub">部门结构管理</text>
+    </view>
+
+    <view class="card" bindtap="goActivityManage">
+      <text class="icon">📅</text>
+      <text class="title">活动管理</text>
+      <text class="sub">查看活动记录</text>
+    </view>
+
+    <view class="card" bindtap="goAlbumManage">
+      <text class="icon">🖼️</text>
+      <text class="title">相册管理</text>
+      <text class="sub">管理社团照片</text>
+    </view>
+
+   
+
+  </view>
+</view>
+
+</view>

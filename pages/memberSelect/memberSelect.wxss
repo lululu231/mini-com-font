@@ -1,0 +1,75 @@
+.container {
+    padding: 30rpx;
+    background: #f5f7ff;
+    min-height: 100vh;
+  }
+  
+  .header {
+    margin-bottom: 20rpx;
+  }
+  
+  .title {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: #1677ff;
+  }
+  
+  /* 成员项 */
+  .member-item {
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    background: #fff;
+    border-radius: 14rpx;
+    margin-bottom: 16rpx;
+    box-shadow: 0 6rpx 16rpx rgba(22,119,255,0.08);
+  }
+  
+  .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+  }
+  
+  .info {
+    flex: 1;
+    margin-left: 20rpx;
+  }
+  
+  /* 姓名 */
+  .name {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* 第二行信息 */
+  .meta {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    color: #888;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 职位 */
+  .position {
+    color: #1677ff;
+    font-weight: 500;
+  }
+  
+  /* 分隔符 */
+  .divider {
+    margin: 0 8rpx;
+    color: #ccc;
+  }
+  
+  /* 部门 */
+  .department {
+    color: #666;
+  }
+  
+  .checked {
+    color: #1677ff;
+    font-size: 32rpx;
+  }

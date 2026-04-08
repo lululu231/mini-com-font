@@ -17,13 +17,13 @@ const request = (options) => {
 
             success: (res) => {
                 // ✅ 先判断 HTTP 状态码
-                if (res.statusCode !== 200) {
+                if (res.statusCode < 200 || res.statusCode >= 300) {
                     wx.showToast({
-                        title: '服务器异常',
-                        icon: 'none'
+                      title: '服务器异常',
+                      icon: 'none'
                     });
                     return reject(res);
-                }
+                  }          
                 
                 const resData = res.data || {};
                 console.log('统一封装request',resData)

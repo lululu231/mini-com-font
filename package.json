@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.11.7",
+    "dayjs": "^1.11.20"
+  },
+  "usingComponents": {
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
+  }
+}

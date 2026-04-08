@@ -1,0 +1,79 @@
+<!-- pages/createActivity/createActivity.wxml -->
+<view class="container">
+
+<view class="card">
+
+  <!-- 标题 -->
+  <view class="title">发布活动</view>
+
+  <!-- 活动名称 -->
+  <view class="form-item">
+    <text class="label">活动名称</text>
+    <input 
+      class="input"
+      placeholder="请输入活动名称"
+      bindinput="onInput"
+      data-field="name"
+    />
+  </view>
+
+  <!-- 地点 -->
+  <view class="form-item">
+    <text class="label">活动地点</text>
+    <input 
+      class="input"
+      placeholder="请输入地点"
+      bindinput="onInput"
+      data-field="location"
+    />
+  </view>
+
+  <!-- 时间 -->
+  <!-- 开始时间 -->
+<!-- 开始时间 -->
+<!-- 开始时间 -->
+<view class="form-item">
+  <text class="label">开始时间</text>
+  <picker mode="multiSelector" value="{{startDateTime}}" bindchange="changeStartDateTime" range="{{startDateTimeArray}}">
+    <view>{{form.startTime}}</view>
+  </picker>
+</view>
+
+<!-- 结束时间 -->
+<view class="form-item">
+  <text class="label">结束时间</text>
+  <picker mode="multiSelector" value="{{endDateTime}}" bindchange="changeEndDateTime" range="{{endDateTimeArray}}">
+    <view>{{form.endTime}}</view>
+  </picker>
+</view>
+  <!-- 最大人数 -->
+  <view class="form-item">
+    <text class="label">报名人数上限</text>
+    <input 
+      class="input"
+      type="number"
+      placeholder="请输入人数"
+      bindinput="onInput"
+      data-field="maxParticipants"
+    />
+  </view>
+
+  <!-- 描述 -->
+  <view class="form-item">
+    <text class="label">活动描述</text>
+    <textarea 
+      class="textarea"
+      placeholder="请输入活动内容..."
+      bindinput="onInput"
+      data-field="description"
+    />
+  </view>
+
+  <!-- 提交 -->
+  <button class="submit-btn" bindtap="submit">
+    发布活动
+  </button>
+
+</view>
+
+</view>

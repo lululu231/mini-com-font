@@ -1,0 +1,43 @@
+<view class="container">
+
+<!-- 成员列表 -->
+<view class="list">
+  <view 
+    class="card"
+    wx:for="{{members}}"
+    wx:key="id"
+  >
+    <!-- 左侧头像 -->
+    <image 
+      class="avatar"
+      src="{{item.avatar || defaultAvatar}}"
+    />
+
+    <!-- 中间信息 -->
+    <view class="info">
+      <view class="row">
+        <text class="name">{{item.name}}</text>
+        <!-- 性别，仅 male/female 才显示 -->
+        <text class="gender" wx:if="{{item.gender === 'male' || item.gender === 'female'}}">
+          {{item.gender === 'male' ? '♂️' : '♀️'}}
+        </text>
+      </view>
+
+      <view class="phone">{{item.maskPhone}}</view>
+
+      <view class="tags">
+        <!-- 部门 -->
+        <text class="tag dept">{{item.department}}</text>
+        <!-- 职位 -->
+        <text class="tag position">{{item.position}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 空状态 -->
+<view wx:if="{{!members.length}}" class="empty">
+  暂无成员
+</view>
+
+</view>

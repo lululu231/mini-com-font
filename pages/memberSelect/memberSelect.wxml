@@ -1,0 +1,33 @@
+<view class="container">
+
+<!-- 标题 -->
+<view class="header">
+  <text class="title">{{pageTitle}}</text>
+</view>
+
+<!-- 成员列表 -->
+<view class="member-list">
+  <view 
+    class="member-item"
+    wx:for="{{memberList}}"
+    wx:key="id"
+    data-item="{{item}}"
+    bindtap="selectMember"
+  >
+    <image class="avatar" src="{{item.avatar}}" />
+
+    <view class="info">
+        <text class="name">{{item.name}}</text>
+
+        <view class="meta">
+            <text class="position">{{item.position || '普通成员'}}</text>
+            <text class="divider">|</text>
+            <text class="department">{{item.department || '未分配部门'}}</text>
+        </view>
+    </view>
+    <!-- 选中标识 -->
+    <text wx:if="{{selectedId === item.id}}" class="checked">✔</text>
+  </view>
+</view>
+
+</view>

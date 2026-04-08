@@ -1,12 +1,15 @@
 <!--components/hotCommunity/hotCommunity.wxml-->
 <view class="container" >
     <section2 
-    wx:for="{{actItem}}" 
+    wx:for="{{activities}}" 
     wx:for-item="item" 
-    wx:key="itemID"
-    actName="{{item.itemName}}"
-    imgSrc="{{item.imgItem}}"
+    wx:key="id"
+    actName="{{item.title}}"
+    imgSrc="{{item.avatar_url}}"
     description="{{item.description}}"
+    start_time="{{item.start_time}}"
+    location="{{item.location}}"
     class="actItem"
     ></section2>
+    
 </view>

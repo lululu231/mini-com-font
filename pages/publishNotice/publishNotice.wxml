@@ -1,0 +1,49 @@
+<!-- pages/publishNotice/publishNotice.wxml -->
+<view class="container">
+
+<!-- 顶部标题 -->
+<view class="header">
+  <text class="title">发布公告</text>
+</view>
+
+<!-- 公告标题 -->
+<view class="form-group">
+  <text class="label">公告标题</text>
+  <input class="input" placeholder="请输入公告标题" maxlength="50" bindinput="onTitleInput" />
+</view>
+
+<!-- 公告内容 -->
+<view class="form-group">
+  <text class="label">公告内容</text>
+  <textarea class="textarea" placeholder="请输入公告内容" bindinput="onContentInput" />
+</view>
+
+<!-- 公告类型 -->
+<view class="form-group">
+  <text class="label">公告类型</text>
+    <picker 
+        mode="selector" 
+        range="{{noticeTypes}}" 
+        range-key="label"
+        bindchange="onTypeChange"
+        >
+        <view class="picker">
+            {{selectedTypeLabel}}
+        </view>
+    </picker>
+</view>
+
+<!-- 附件上传 -->
+<view class="form-group">
+  <text class="label">附件</text>
+  <button class="upload-btn" bindtap="chooseFile">选择文件</button>
+  <text class="file-name" wx:if="{{fileName}}">{{fileName}}</text>
+</view>
+
+
+<!-- 发布按钮 -->
+<view class="form-group">
+  <button class="publish-btn" bindtap="publishNotice">发布公告</button>
+</view>
+
+</view>

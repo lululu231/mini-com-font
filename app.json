@@ -10,12 +10,32 @@
     "pages/newPostPage/newPostPage",
     "pages/newCommunity/newCommunity",
     "pages/allCommunity/allCommunity",
-    "pages/communityHome/communityHome"
+    "pages/communityHome/communityHome",
+    "pages/communityManage/communityManage",
+    "pages/departmentManage/departmentManage",
+    "pages/createDepartment/createDepartment",
+    "pages/memberManage/memberManage",
+    "pages/createActivity/createActivity",
+    "pages/activityManage/activityManage",
+    "pages/activityList/activityList",
+    "pages/noticeList/noticeList",
+    "pages/memberList/memberList",
+    "pages/applyList/applyList",
+    "pages/publishNotice/publishNotice",
+    "pages/album/index",
+    "pages/album/detail",
+    "pages/albumManage/albumManage",
+    "pages/memberSelect/memberSelect",
+    "pages/acAll/acAll"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Weixin",
     "navigationBarBackgroundColor": "#ffffff"
+  },
+  "usingComponents": {
+    "van-popup": "miniprogram_npm/@vant/weapp/popup/index",
+    "van-datetime-picker": "miniprogram_npm/@vant/weapp/datetime-picker/index"
   },
   "style": "v2",
   "componentFramework": "glass-easel",

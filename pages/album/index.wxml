@@ -1,0 +1,24 @@
+<view class="container">
+
+<view class="title">社团相册</view>
+
+<view class="group-list">
+  <view 
+    class="group-card"
+    wx:for="{{albumGroups}}"
+    wx:key="id"
+    data-group="{{item}}"
+    bindtap="goDetail"
+  >
+    <!-- 封面 -->
+    <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+
+    <!-- 信息 -->
+    <view class="info">
+      <text class="name">{{item.activityName}}</text>
+      <text class="count">{{item.photos.length}} 张照片</text>
+    </view>
+  </view>
+</view>
+
+</view>

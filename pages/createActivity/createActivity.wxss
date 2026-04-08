@@ -1,0 +1,73 @@
+.container {
+    padding: 30rpx;
+    background: linear-gradient(180deg, #eaf2ff, #f7faff);
+    min-height: 100vh;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 24rpx;
+    padding: 30rpx;
+    box-shadow: 0 10rpx 30rpx rgba(0, 102, 255, 0.08);
+  }
+  .pcik{
+    background-color: #1677ff;
+  }
+  .title {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #2b2f36;
+    margin-bottom: 30rpx;
+  }
+  
+  .form-item {
+    margin-bottom: 24rpx;
+  }
+  
+  .label {
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+    display: block;
+  }
+  
+  .input {
+    height: 80rpx;
+    border-radius: 16rpx;
+    padding: 0 20rpx;
+    background: #f5f7ff;
+  }
+  
+  .textarea {
+    height: 160rpx;
+    border-radius: 16rpx;
+    padding: 20rpx;
+    background: #f5f7ff;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20rpx;
+  }
+  
+  .half {
+    flex: 1;
+  }
+  
+  .picker {
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+    border-radius: 16rpx;
+    background: #f5f7ff;
+    color: #333;
+  }
+  
+  .submit-btn {
+    margin-top: 30rpx;
+    background: linear-gradient(135deg, #1677ff, #69a6ff);
+    color: #fff;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+  }

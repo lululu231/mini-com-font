@@ -15,7 +15,7 @@
         <view class="textCard1">{{item.name}}</view>
         </view>
     </view>
-    <view class="memberMore">查看更多 》</view>
+    <view class="memberMore" bind:tap="handleMenberList">查看更多 》</view>
     </view>
     <!-- 社团活动 -->
     <view wx:if="{{theme===2}}" >
@@ -25,7 +25,7 @@
     <view class="themeCard2">
     <image src="/assets/image/activtytest.png" mode="aspectFill" class="actImg"></image>
     <!-- <view class="card-mask"> -->
-    <text class="actText">点击报名</text>
+    <text class="actText" bind:tap="handleActivityList">点击报名</text>
     <!-- </view> -->
     </view>
     </view>
@@ -35,14 +35,14 @@
         社团论坛
     </view>
     <view class="themeCard3Container">
-        <view class="themeCard3">
-    <view class="themeCard3Text">进入论坛</view>
+    <view class="themeCard3">
+    <view class="themeCard3Text" bind:tap="goForum">进入论坛</view>
     </view>
     <view class="themeCard3">
-    <view class="themeCard3Text">发布帖子</view>
+    <view class="themeCard3Text" bind:tap="goNewPost">发布帖子</view>
     </view>
     <view class="themeCard3">
-    <view class="themeCard3Text">查看公告</view>
+    <view class="themeCard3Text" bind:tap="goPublish">查看公告</view>
     </view></view>
     
     </view>

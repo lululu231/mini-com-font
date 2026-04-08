@@ -8,7 +8,17 @@
     display: flex;
     padding: 20rpx;
 }
-
+.acTime {
+    font-size: 28rpx;         /* 文字大小 */
+    color: #171616;           /* 白色文字 */
+    background: ghostwhite; /* 渐变背景 */
+    padding: 10rpx 20rpx;     /* 内边距，文字不贴边 */
+    border-radius: 20rpx;     /* 圆角 */
+    text-align: center;       /* 居中显示文字 */
+    box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.2); /* 投影增加浮感 */
+    display: inline-block;    /* 避免撑满整行 */
+    font-weight: bold;        /* 字体加粗 */
+  }
 .imgSrc{
     margin-right: 20rpx;
     width: 200rpx;

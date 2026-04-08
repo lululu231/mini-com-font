@@ -1,5 +1,6 @@
 // components/section2/section2.js
 import { DEFAULT_AVATAR } from '../../constants/index.js'
+import dayjs from '../../miniprogram_npm/dayjs/index.js'
 
 Component({
 
@@ -19,7 +20,18 @@ Component({
     actStatus:{
         type: String,
         value:'1233rtxdgdhscsgcuagsd'
-
+    },
+    start_time: {
+        type: String,
+        value: ''
+    },
+    location:{
+        type: String,
+        value:'1233rtxdgdhscsgcuagsd'
+    },
+    formattedTime:{
+        type: String,
+        value: ''
     }
   },
 
@@ -29,7 +41,22 @@ Component({
   data: {
 
   },
-
+//   observers:{
+//     actName(newVal){
+//         console.log('112233')
+//     }
+//   },
+  observers: {
+    start_time(newVal) {
+        console.log('新数据')
+      if (newVal) {
+        const localTime = dayjs(newVal).format('YYYY-MM-DD HH:mm')
+        this.setData({
+          formattedTime: localTime
+        })
+      }
+    }
+ },
   /**
    * 组件的方法列表
    */

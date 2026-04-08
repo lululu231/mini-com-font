@@ -1,9 +1,11 @@
 <!--components/applyOrg/applyOrg.wxml-->
 <view class="container">
-    <view class="normal">
-    退出社团
+    
+    <!-- 社长 -->
+    <view  class="admin" wx:if="{{admin==='ADMIN'}}" bind:tap="handlecommunityManage">
+    社团管理
     </view>
-    <view wx:if="{{admin==='ADMIN'}}" class="admin">
-    管理成员
+    <view class="normal" wx:else>
+    退出社团
     </view>
 </view>

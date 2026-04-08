@@ -8,17 +8,24 @@ Page({
     showCommunityPanel: false,   // 是否展示切换面板
     solgan: '请选择社团',
     cardItem: [
-      { itemID: 1, itemName: '社团成员', imgItem: '/assets/image/成员.png' },
-      { itemID: 2, itemName: '社团活动', imgItem: '/assets/image/角色管理.png' },
-      { itemID: 3, itemName: '群聊', imgItem: '/assets/image/通讯录.png' },
-      { itemID: 4, itemName: '社团公告', imgItem: '/assets/image/通知.png' }
+      { itemID: 1, itemName: '社团成员', imgItem: '/assets/image/成员.png' ,url:'/pages/memberList/memberList'},
+      { itemID: 2, itemName: '社团活动', imgItem: '/assets/image/角色管理.png',url:'/pages/activityList/activityList' },
+      { itemID: 3, itemName: '社团风采', imgItem: '/assets/image/通讯录.png' ,url:'/pages/album/index'},
+      { itemID: 4, itemName: '社团公告', imgItem: '/assets/image/通知.png',url:'/pages/noticeList/noticeList' }
     ],
-    admin1: 'ADMIN',
-    admin0: 'USER'
+    members:[],
+    admin: 'ADMIN',
+    user: 'USER'
   },
-
+  
+    handleMenberList(){
+        wx.navigateTo({
+            url:'/pages/memberList/memberList'
+        })
+},
   onLoad() {
     this.fetchJoinedCommunities();
+    
   },
 
   // 🔹 获取已加入社团（Promise .then 形式）
@@ -73,8 +80,34 @@ Page({
   refreshCommunityData(curCom) {
     // TODO: 调用各模块接口刷新数据
     console.log('curCom',curCom)
+    wx.setStorageSync('curComId',curCom)
+    //console.log(wx.getStorageSync('curComId'))
     this.setData({
        solgan:curCom.description
     })
+    this.loadMembers()
+  },
+  loadMembers() {
+    const  communityId  = wx.getStorageSync('curComId')?.id;
+    if (!communityId) return;
+
+    request({
+      url: `/community/${communityId}/members`,
+      method: 'GET'
+    })
+      .then(res => {
+        console.log('members缩略图', res.data);
+        const list = res.data.map(item => ({
+          id: item.user_id,
+          name: item.nick_name,
+          avatar: item.avatar_url || this.data.defaultAvatar,
+        }));
+
+        this.setData({ members: list });
+      })
+      .catch(err => {
+        console.error('获取成员失败', err);
+        wx.showToast({ title: '加载成员失败', icon: 'none' });
+      });
   }
 });

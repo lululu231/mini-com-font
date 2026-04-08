@@ -1,7 +1,7 @@
 <view 
   class="card card--{{size}} {{customClass}} {{clickable ? 'card--clickable' : ''}}"
   style="{{customStyle}}"
-  bindtap="handleClick"
+  bind:tap="handleClick"
 >
   <image 
     class="card-img" 

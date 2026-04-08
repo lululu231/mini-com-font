@@ -1,0 +1,69 @@
+<!-- pages/departmentManage/departmentManage.wxml -->
+<view class="container">
+
+<!-- 顶部 -->
+<view class="header">
+  <view>
+    <text class="title">部门管理</text>
+    <view class="sub-title">管理社团组织结构</view>
+  </view>
+
+</view>
+
+<!-- 列表 -->
+<view class="list">
+
+  <view class="dept-card" wx:for="{{departments}}" wx:key="id">
+
+    <!-- 左侧信息 -->
+    <view 
+    class="left {{item.status === 0 ? 'disabled' : ''}}" 
+    bindtap="{{item.status === 0 ? '' : 'goDepartmentDetail'}}"
+    data-id="{{item.department_id}}"
+    >
+      <view class="dept-name">{{item.department_name}}</view>
+
+    <view class="tags">
+        <view class="tag blue">负责人: {{item.admin_name}}</view>
+
+        <!-- ✅ 状态标签 -->
+        <view wx:if="{{item.status === 0}}" class="tag red">
+            已解散
+        </view>
+    </view>
+
+    <!-- 右侧按钮 -->
+    <view class="right">
+
+            <!-- 编辑按钮 -->
+            <view 
+            class="btn edit {{item.status === 0 ? 'btn-disabled' : ''}}" 
+            bindtap="{{item.status === 0 ? '' : 'handleEdit'}}"
+            data-id="{{item.department_id}}"
+            >
+            编辑
+            </view>
+
+            <!-- 解散按钮 -->
+            <view 
+            wx:if="{{item.status !== 0}}"
+            class="btn delete" 
+            bindtap="handleDelete" 
+            data-id="{{item.department_id}}"
+            >
+            解散
+            </view>
+        </view>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 空状态 -->
+<view wx:if="{{departments.length === 0}}" class="empty">
+  <text>暂无部门</text>
+  <view class="empty-btn" bindtap="goCreateDepartment">去创建</view>
+</view>
+
+</view>

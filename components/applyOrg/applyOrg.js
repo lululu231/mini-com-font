@@ -22,6 +22,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handlecommunityManage(){
+        wx.navigateTo({
+            url:'/pages/communityManage/communityManage'
+        })
+    }
   }
 })

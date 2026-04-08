@@ -1,0 +1,77 @@
+.container {
+    padding: 30rpx;
+    background: linear-gradient(180deg, #f0f5ff, #ffffff);
+    min-height: 100vh;
+  }
+  
+  /* 头部 */
+  .header {
+    margin-bottom: 30rpx;
+  }
+  
+  .title {
+    font-size: 40rpx;
+    font-weight: 600;
+    color: #1f2d3d;
+  }
+  
+  .sub {
+    font-size: 24rpx;
+    color: #8c9bb3;
+    margin-top: 8rpx;
+  }
+  
+  /* 表单 */
+  .form {
+    background: #fff;
+    border-radius: 24rpx;
+    padding: 30rpx;
+    box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.05);
+  }
+  
+  /* 表单项 */
+  .form-item {
+    margin-bottom: 30rpx;
+  }
+  
+  .label {
+    display: block;
+    font-size: 26rpx;
+    color: #333;
+    margin-bottom: 12rpx;
+  }
+  
+  /* 输入框 */
+  .input {
+    background: #f5f7fb;
+    border-radius: 16rpx;
+    padding: 20rpx;
+    font-size: 26rpx;
+  }
+  
+  /* 选择器 */
+  .selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f7fb;
+    border-radius: 16rpx;
+    padding: 20rpx;
+    font-size: 26rpx;
+  }
+  
+  .arrow {
+    color: #999;
+  }
+  
+  /* 提交按钮 */
+  .submit-btn {
+    margin-top: 40rpx;
+    background: linear-gradient(135deg, #4a90e2, #6fb1ff);
+    color: #fff;
+    text-align: center;
+    padding: 20rpx;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+    box-shadow: 0 8rpx 20rpx rgba(74,144,226,0.3);
+  }

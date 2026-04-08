@@ -1,0 +1,110 @@
+<!-- pages/memberManage/memberManage.wxml -->
+<view class="container">
+
+<!-- 顶部 -->
+<view class="header">
+  <text class="title">成员管理</text>
+</view>
+
+<!-- 部门选择 -->
+<view wx:if="{{role !== '普通成员'}}" class="dept-switch">
+  <picker 
+    mode="selector" 
+    range="{{departments}}" 
+    range-key="department_name"
+    bindchange="onDeptChange"
+  >
+    <view class="picker">
+      当前部门：{{currentDeptName}}
+    </view>
+  </picker>
+</view>
+
+<!-- 成员列表 -->
+<view class="section">
+  <text class="section-title">成员列表</text>
+
+  <view wx:for="{{members}}" wx:key="id" class="member-card">
+
+    <!-- 左侧：头像+信息 -->
+    <view class="left">
+      <image class="avatar" src="{{item.avatar_url}}" mode="aspectFill"></image>
+
+      <view class="info">
+        <view class="top">
+          <text class="name">{{item.nick_name}}</text>
+          <text class="tag role-{{item.role}}">
+            {{item.position}}
+          </text>
+        </view>
+        <text class="meta">{{item.department_name}}</text>
+      </view>
+    </view>
+
+    <!-- 右侧操作 -->
+    <view class="right">
+
+      <!-- 调部门 -->
+      <view 
+        wx:if="{{role !== '普通成员'}}"
+        class="btn ghost small"
+        data-id="{{item.user_id}}"
+        bindtap="changeDept"
+      >
+        调部门
+      </view>
+
+      <!-- 设部长 -->
+      <view 
+        wx:if="{{role === '社长'}}"
+        class="btn primary small"
+        data-id="{{item.id}}"
+        bindtap="setLeader"
+      >
+        设部长
+      </view>
+
+      <!-- ✅ 踢出成员 -->
+      <view 
+        wx:if="{{role !== '普通成员' && item.role !== '社长'}}"
+        class="btn danger small"
+        data-id="{{item.user_id}}"
+        bindtap="kickMember"
+      >
+        移除
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+<!-- 调部门弹窗 -->
+<view wx:if="{{showDeptModal}}" class="modal-mask">
+  <view class="modal">
+
+    <view class="modal-title">选择部门</view>
+
+    <!-- 部门列表 -->
+    <view class="dept-list">
+      <view 
+        wx:for="{{departments}}" 
+        wx:key="department_id"
+        class="dept-item {{selectedDeptId === item.department_id ? 'active' : ''}}"
+        data-id="{{item.department_id}}"
+        bind:tap="selectDept"
+      >
+        {{item.department_name}}
+      </view>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="modal-actions">
+      <view class="btn ghost" bindtap="closeDeptModal">取消</view>
+      <view class="btn primary" bindtap="confirmChangeDept">确定</view>
+    </view>
+
+  </view>
+</view>
+
+</view>

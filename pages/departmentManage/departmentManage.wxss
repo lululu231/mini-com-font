@@ -1,0 +1,132 @@
+.container {
+    padding: 30rpx;
+    background: linear-gradient(180deg, #f0f5ff, #ffffff);
+    min-height: 100vh;
+  }
+  
+  /* 头部 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30rpx;
+  }
+  
+  .title {
+    font-size: 40rpx;
+    font-weight: 600;
+    color: #1f2d3d;
+  }
+  
+  .sub-title {
+    font-size: 24rpx;
+    color: #8c9bb3;
+    margin-top: 6rpx;
+  }
+  
+  /* 新建按钮 */
+  .create-btn {
+    background: linear-gradient(135deg, #4a90e2, #6fb1ff);
+    color: #fff;
+    padding: 14rpx 30rpx;
+    border-radius: 40rpx;
+    font-size: 26rpx;
+    box-shadow: 0 6rpx 16rpx rgba(74,144,226,0.3);
+  }
+  
+  /* 列表 */
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  /* 卡片 */
+  .dept-card {
+    background: #fff;
+    border-radius: 24rpx;
+    padding: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.06);
+    transition: all 0.2s;
+  }
+  
+  /* 按压反馈 */
+  .dept-card:active {
+    transform: scale(0.98);
+  }
+  
+  /* 左侧 */
+  .dept-name {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .tags {
+    margin-top: 16rpx;
+    display: flex;
+    gap: 12rpx;
+  }
+  
+  /* 标签 */
+  .tag {
+    padding: 6rpx 16rpx;
+    border-radius: 20rpx;
+    font-size: 22rpx;
+  }
+  
+  .tag.blue {
+    background: rgba(74,144,226,0.1);
+    color: #4a90e2;
+  }
+  
+  .tag.gray {
+    background: #f2f3f5;
+    color: #666;
+  }
+  
+  /* 右侧按钮 */
+  .right {
+    display: flex;
+    margin-top: 10rpx;
+    gap: 16rpx;
+  }
+  
+  /* 按钮 */
+  .btn {
+    padding: 10rpx 24rpx;
+    border-radius: 30rpx;
+    font-size: 24rpx;
+  }
+  
+  /* 编辑按钮 */
+  .btn.edit {
+    background: rgba(74,144,226,0.1);
+    color: #4a90e2;
+  }
+  
+  /* 删除按钮 */
+  .btn.delete {
+    background: rgba(255,77,79,0.1);
+    color: #ff4d4f;
+  }
+  
+  /* 空状态 */
+  .empty {
+    text-align: center;
+    margin-top: 200rpx;
+    color: #999;
+  }
+  
+  .empty-btn {
+    margin-top: 20rpx;
+    display: inline-block;
+    background: #4a90e2;
+    color: #fff;
+    padding: 12rpx 30rpx;
+    border-radius: 30rpx;
+  }

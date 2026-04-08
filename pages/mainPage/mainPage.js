@@ -11,7 +11,8 @@ Page({
         newAct:'最新活动',
         userInfor:{},
         avatarUrl:DEFAULT_AVATAR,
-        communities:[]
+        communities:[],
+        activities:[]
     },
     onLoad: async function() {
         const userInfo = wx.getStorageSync('userInfo');
@@ -45,8 +46,34 @@ Page({
             });
         }
         this.fetchAllCommunities();
+        this.fetchActivities()
       },
-    
+      fetchActivities() {
+        request({
+          url: '/event/all', // ✅ 相对路径
+          method: 'GET',
+          data: {
+            status: 'approved' ,// 只查审核通过
+            //communityId:wx.getStorageSync('curComId').id
+          }
+        })
+          .then(res => {
+            
+            let list = res.data || [];
+            console.log('全部活动',list )
+            this.setData({
+              activities: list
+            });
+            console.log('activities111',this.data.activities)
+          })
+          .catch(err => {
+            console.error('获取活动失败', err);
+            wx.showToast({
+              title: '加载失败',
+              icon: 'error'
+            });
+          });
+      },
       fetchAllCommunities() {
         const userInfo = wx.getStorageSync('userInfo');
         const userId = userInfo?.userId;
@@ -72,6 +99,12 @@ Page({
             url:'../allCommunity/allCommunity'
         })
     },
+    goActivityAll(){
+        console.log('点击了查看活动')
+        wx.navigateTo({
+            url:'/pages/acAll/acAll'
+        })
+    }
 
 
 })

@@ -1,0 +1,49 @@
+<!-- pages/createDepartment/createDepartment.wxml -->
+<view class="container">
+
+<!-- 标题 -->
+<view class="header">
+  <text class="title">部门信息</text>
+  <view class="sub">配置部门信息与负责人</view>
+</view>
+
+<!-- 表单 -->
+<view class="form">
+
+  <!-- 部门名称 -->
+  <view class="form-item">
+    <text class="label">部门名称</text>
+    <input 
+      class="input"
+      placeholder="请输入部门名称"
+      value="{{name}}"
+      bindinput="onNameChange"
+    />
+  </view>
+
+  <!-- 部长选择 -->
+  <view class="form-item" bindtap="selectLeader">
+    <text class="label">部长</text>
+    <view class="selector">
+      <text>{{leaderName || '请选择部长'}}</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+
+  <!-- 副社长
+  <view class="form-item" bindtap="selectVicePresident">
+    <text class="label">副社长</text>
+    <view class="selector">
+      <text>{{viceName || '可不设置'}}</text>
+      <text class="arrow">></text>
+    </view>
+  </view> -->
+
+</view>
+
+<!-- 提交按钮 -->
+<view class="submit-btn" bindtap="handleSubmit">
+  提交
+</view>
+
+</view>

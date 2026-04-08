@@ -1,0 +1,50 @@
+<view class="container">
+
+<!-- 顶部 -->
+<view class="header">
+  <text class="title">相册管理</text>
+  <button class="add-btn" bindtap="addGroup">+ 新建分组</button>
+</view>
+
+<!-- 分组列表 -->
+<block wx:for="{{albumGroups}}" wx:key="id">
+  <view class="group-card">
+
+    <!-- 分组标题 -->
+    <view class="group-header">
+      <text class="group-name">{{item.activityName}}</text>
+
+      <view class="group-actions">
+        <button size="mini" bindtap="uploadPhoto" data-id="{{item.id}}">上传</button>
+        <button size="mini" type="warn" bindtap="deleteGroup" data-id="{{item.id}}">删除组</button>
+      </view>
+    </view>
+
+    <!-- 照片列表 -->
+    <view class="photo-grid">
+      <view 
+        class="photo-item"
+        wx:for="{{item.photos}}"
+        wx:key="id"
+      >
+        <image 
+          src="{{item.url}}" 
+          class="photo"
+          data-url="{{item.url}}"
+          bindtap="previewImage"
+        />
+
+        <!-- 删除按钮 -->
+        <view 
+          class="delete-btn"
+          bindtap="deletePhoto"
+          data-groupid="{{item.id}}"
+          data-photoid="{{item.id}}"
+        >×</view>
+      </view>
+    </view>
+
+  </view>
+</block>
+
+</view>

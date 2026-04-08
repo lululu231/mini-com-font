@@ -34,15 +34,16 @@
 
     <!-- 主界面 -->
     <view class="communityMain">
-      <section3 theme="1"></section3>
+      <section3 theme="1"
+      mockMembers="{{members}}"></section3>
       <section3 theme="2"></section3>
       <section3 theme="3"></section3>
     </view>
 
     <!-- 管理员操作 -->
     <view>
-      <applyOrg admin="{{admin1}}"></applyOrg>
-      <applyOrg admin="{{admin0}}"></applyOrg>
+      <applyOrg admin="{{admin}}"></applyOrg>
+      <applyOrg admin="{{user}}"></applyOrg>
     </view>
   </scroll-view>
 </view>

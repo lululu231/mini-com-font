@@ -1,0 +1,103 @@
+<!-- pages/activityManage/activityManage.wxml -->
+<view class="container">
+
+  <!-- 状态筛选 -->
+  <view class="tabs">
+    <view 
+      wx:for="{{tabs}}"
+      wx:key="key"
+      class="tab {{currentTab === item.key ? 'active' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="switchTab"
+    >
+      {{item.label}}
+    </view>
+  </view>
+
+  <!-- 活动列表 -->
+  <view class="list">
+
+    <view 
+      class="card"
+      wx:for="{{activities}}"
+      wx:key="id"
+    >
+
+      <!-- 封面（如果有） -->
+      <image 
+        wx:if="{{item.cover_url}}"
+        class="cover"
+        src="{{item.cover_url}}"
+        mode="aspectFill"
+      />
+
+      <!-- 标题 + 状态 -->
+      <view class="card-header">
+        <text class="name">{{item.title}}</text>
+        <view class="status {{item.status}}">
+          {{statusMap[item.status]}}
+        </view>
+      </view>
+
+      <!-- 社团信息 -->
+      <view class="community">
+        <!-- <image 
+          class="avatar" 
+          src="{{item.avatar_url}}" 
+          mode="aspectFill"
+        /> -->
+        <text class="nameText">{{item.community_name}}</text>
+      </view>
+
+      <!-- 信息 -->
+      <view class="info">
+        <text>📍 {{item.location || '暂无地点'}}</text>
+        <text>⏰ {{item.startTime}} - {{item.endTime}}</text>
+        <text>
+          👥 {{item.participant_count || 0}} / {{item.max_count || '∞'}}
+        </text>
+      </view>
+      <!-- 活动描述（点击详情展开） -->
+      <view wx:if="{{item.showDetail}}" class="description">
+        {{item.event_description || '暂无描述'}}
+        </view>
+      <!-- 操作 -->
+      <view class="actions">
+
+        <button size="mini" bindtap="toggleDetail" data-id="{{item.id}}">
+            {{item.showDetail ? '收起' : '详情'}}
+        </button>
+
+        <!-- <button 
+          size="mini" 
+          wx:if="{{item.status === 'upcoming'}}"
+          bindtap="edit"
+          data-id="{{item.id}}"
+        >
+          编辑
+        </button> -->
+
+        <button 
+          size="mini"
+          wx:if="{{item.status === 'upcoming'}}"
+          bindtap="cancel"
+          data-id="{{item.id}}"
+        >
+          取消
+        </button>
+
+        <button 
+          size="mini"
+          bindtap="manageUsers"
+          data-id="{{item.id}}"
+        >
+          报名管理
+        </button>
+
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,97 @@
+/* pages/communityManage/communityManage.wxss */
+
+.container {
+    padding: 30rpx;
+    background: #f5f8ff;
+    min-height: 100vh;
+  }
+  
+  /* 头部 */
+  .header {
+    display: flex;
+    align-items: center;
+    background: #f5f8ff;
+    padding: 30rpx;
+    border-radius: 20rpx;
+    color: #fff;
+  }
+  
+  .avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+  }
+  
+  .name {
+    font-size: 36rpx;
+    font-weight: bold;
+  }
+  
+  .desc {
+    font-size: 24rpx;
+    opacity: 0.9;
+  }
+  
+  /* 卡片区域 */
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rpx;
+  }
+  
+  .card {
+    width: 30%;
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 30rpx 20rpx;
+    text-align: center;
+    margin: 5rpx 10rpx;
+    box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.05);
+  }
+  
+  .card .icon {
+    font-size: 50rpx;
+  }
+  
+  .card .title {
+    display: block;
+    margin-top: 10rpx;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card .sub {
+    font-size: 22rpx;
+    color: #999;
+  }
+  
+  /* 管理列表 */
+  .section {
+    margin-top: 40rpx;
+  }
+  
+  .section-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+    color: #333;
+  }
+  
+  .list {
+    background: #fff;
+    border-radius: 20rpx;
+    overflow: hidden;
+  }
+  
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 26rpx;
+  }
+  
+  .list-item:last-child {
+    border-bottom: none;
+  }

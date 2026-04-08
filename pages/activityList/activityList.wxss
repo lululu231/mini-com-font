@@ -1,0 +1,112 @@
+.container {
+    padding: 20rpx;
+    background: #f4f7ff;
+    min-height: 100vh;
+  }
+  .nameText{
+    font-size: 20rpx;
+    font-weight:500;
+  }
+  /* tabs */
+  .tabs {
+    display: flex;
+    margin-bottom: 20rpx;
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 16rpx 0;
+    border-radius: 20rpx;
+    background: #fff;
+    margin-right: 10rpx;
+    font-size: 24rpx;
+  }
+  
+  .tab.active {
+    background: linear-gradient(135deg, #1677ff, #69a6ff);
+    color: #fff;
+  }
+  
+  /* 卡片 */
+  .card {
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.05);
+  }
+  .description {
+    padding: 10rpx 14rpx;
+    margin-top: 8rpx;
+    background-color: #f9f9f9; /* 浅灰背景 */
+    border-left: 3rpx solid #1890ff; /* 左边彩色条 */
+    border-radius: 6rpx;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    white-space: line; /* 保留换行 */
+    transition: all 0.3s ease; /* 展开收起动画 */
+  }
+  /* .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+  } */
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between; /* 左右分布 */
+    align-items: center;            /* 垂直居中 */
+  }
+  
+  .name {
+    font-size: 28rpx;
+    font-weight: bold;
+  
+    /* 防止标题过长挤掉状态 */
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .status {
+    font-size: 22rpx;
+    padding: 4rpx 12rpx;
+    border-radius: 20rpx;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-left: 20rpx; /* 和标题拉开距离 */
+  }
+  
+  .status.upcoming {
+    background: #e6f0ff;
+    color: #1677ff;
+  }
+  
+  .status.ongoing {
+    background: #e6fffb;
+    color: #13c2c2;
+  }
+  
+  .status.ended {
+    background: #f0f0f0;
+    color: #999;
+  }
+  
+  .info text {
+    display: block;
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 6rpx;
+  }
+  
+  .actions {
+    margin-top: 16rpx;
+    display: flex;
+    gap: 10rpx;
+  }
