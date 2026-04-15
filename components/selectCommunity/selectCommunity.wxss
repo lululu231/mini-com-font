@@ -2,17 +2,50 @@
 .tab-container{
     background-color: white;
     display: flex;
-    padding:10rpx 40rpx 10rpx 40rpx;
+    padding:0rpx 40rpx ;
     justify-content: space-between;
     height: 60rpx;
 }
-.tab-item{
+/* .tab-item{
     padding:0rpx 50rpx;
     border-radius: 30rpx;
     text-align: center;
     line-height: 60rpx;
-}
+} */
 .active{
     background-color: cornflowerblue;
 
 }
+.tab-container {
+    display: flex;
+    white-space: nowrap; /* ⭐ 防止换行 */
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  }
+  
+  .tab-item {
+    display: inline-block; /* ⭐ 横向排列 */
+    padding: 10rpx 30rpx;
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  .tab-item.active {
+    color: #1677ff;
+    font-weight: bold;
+    position: relative;
+    border-radius: 20rpx;
+  }
+  
+  /* 可选：下划线效果（推荐加） */
+  .tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40rpx;
+    height: 6rpx;
+    background: #1677ff;
+    border-radius: 3rpx;
+  }

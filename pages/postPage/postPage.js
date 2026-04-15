@@ -1,75 +1,62 @@
 // pages/postPage/postPage.js
-import {  mockPosts } from '../forum/mock'
+import request from '../../utils/request.js' // 👈 你的封装请求
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-        post:{}
+    post: {},   // 帖子详情
+    loading: false
   },
-   
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad(options) {
-    // console.log('options',options)
     const { topicId } = options
-    // console.log('进入postPage',topicId)
-    const newpost=mockPosts.find((post)=>post.topicId===topicId)
-    this.setData({
-        post:newpost
-    })
 
-    //this.getPostDetail(topicId)
+    console.log('进入postPage', topicId)
+
+    if (!topicId) {
+      wx.showToast({
+        title: '缺少topicId',
+        icon: 'none'
+      })
+      return
+    }
+
+    this.getPostDetail(topicId)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
+  // 获取帖子详情
+  async getPostDetail(topicId) {
+    this.setData({ loading: true })
 
-  },
+    try {
+      const res = await request({
+        url: `/topic/${topicId}`,
+        method: 'GET'
+      })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
+      console.log('帖子详情返回:', res)
 
-  },
+      if (res.code === 0) {
+        this.setData({
+          post: res.data
+        })
+      } else {
+        wx.showToast({
+          title: res.message || '获取失败',
+          icon: 'none'
+        })
+      }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
+    } catch (error) {
+      console.error('请求失败:', error)
 
-  },
+      wx.showToast({
+        title: '网络错误',
+        icon: 'none'
+      })
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    } finally {
+      this.setData({ loading: false })
+    }
   }
 })

@@ -1,38 +1,161 @@
 .container {
-    padding: 40rpx 30rpx;
+    padding: 30rpx;
     background: #f5f7ff;
     min-height: 100vh;
   }
   
-  .title {
-    font-size: 36rpx;
-    font-weight: bold;
-    color: #1677ff;
+  /* ===== 顶部区域 ===== */
+  .header {
+    margin-bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16rpx;
   }
   
+  .title {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: #1677ff;
+    text-align: center;
+  }
+  
+  /* 新建分组按钮 */
+  .add-btn {
+    background: #1677ff;
+    color: #fff;
+    border-radius: 999rpx;
+    font-size: 24rpx;
+    padding: 10rpx 28rpx;
+    line-height: 1.6;
+    box-shadow: 0 6rpx 16rpx rgba(22, 119, 255, 0.25);
+  }
+  
+  /* ===== 相册卡片 ===== */
   .group-card {
     background: #fff;
     border-radius: 16rpx;
-    margin-bottom: 24rpx;
-    overflow: hidden;
-    box-shadow: 0 8rpx 20rpx rgba(22,119,255,0.08);
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 8rpx 20rpx rgba(22, 119, 255, 0.08);
+    transition: all 0.2s ease;
+    width:300rpx
   }
   
+  .group-card:active {
+    transform: scale(0.98);
+    
+  }
+  
+  /* 卡片头部 */
+  .group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16rpx;
+  }
+  
+  /* 相册名称 */
+  .group-name {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #333;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* ===== 按钮统一优化（上传 / 删除）===== */
+  .group-header button {
+    font-size: 22rpx;
+    padding: 6rpx 18rpx;
+    border-radius: 999rpx;
+    line-height: 1.5;
+  }
+  
+  /* 上传按钮 */
+  .group-header button:first-of-type {
+    background: #e6f4ff;
+    color: #1677ff;
+    border: 1rpx solid #91caff;
+  }
+  
+  /* 删除按钮 */
+  .group-header button:last-of-type {
+    background: #fff1f0;
+    color: #ff4d4f;
+    border: 1rpx solid #ffccc7;
+    margin-left: 10rpx;
+  }
+  
+  /* ===== 封面图 ===== */
   .cover {
     width: 100%;
     height: 260rpx;
+    border-radius: 12rpx;
+    background: #f0f0f0;
   }
   
-  .info {
-    padding: 20rpx;
-  }
+  /* ===== 详情页 ===== */
+  .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20rpx;
+    }
   
-  .name {
-    font-size: 30rpx;
-    font-weight: 600;
-  }
+  /* 单张图片容器 */
+  .photo-item {
+      position: relative;
+      width: 200rpx;
+      margin-bottom: 10rpx;
+      height: 220rpx;
+      border-radius: 10rpx;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
   
-  .count {
+  /* 图片 */
+  .photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  
+  /* 删除按钮 */
+  .delete-btn {
+    position: absolute;
+    top: 6rpx;
+    right: 6rpx;
+    width: 36rpx;
+    height: 36rpx;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36rpx;
     font-size: 24rpx;
-    color: #888;
+  }
+  
+  /* ===== 详情页顶部按钮 ===== */
+  .header button {
+    align-self: flex-start;
+    font-size: 24rpx;
+    padding: 8rpx 20rpx;
+    border-radius: 999rpx;
+    background: #ffffff;
+    color: #1677ff;
+    border: 1rpx solid #1677ff;
+  }
+  
+  /* ===== 上传按钮（详情页）===== */
+  .container > button {
+    margin: 10rpx 0 20rpx;
+    background: #1677ff;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 999rpx;
+    padding: 10rpx 24rpx;
+    box-shadow: 0 6rpx 16rpx rgba(22, 119, 255, 0.2);
   }

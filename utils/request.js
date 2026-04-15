@@ -1,5 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
-
+const BASE_URL = "https://lulu76.top"
 const request = (options) => {
     return new Promise((resolve, reject) => {
         console.log('请求URL:', BASE_URL + options.url);

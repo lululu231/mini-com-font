@@ -1,0 +1,75 @@
+.container {
+    padding: 24rpx;
+    background: #f6f7fb;
+    min-height: 100vh;
+  }
+  
+  /* ===== tabs ===== */
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+  }
+  
+  .tab {
+    font-size: 26rpx;
+    padding: 10rpx 18rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 0rpx 15rpx;
+    color: #666;
+  }
+  
+  /* ===== list ===== */
+  .item {
+    background: #fff;
+    padding: 24rpx;
+    border-radius: 16rpx;
+    margin-bottom: 16rpx;
+  }
+  
+  /* 未读高亮
+  .unread {
+    border-left: 6rpx solid #1677ff;
+  } */
+  
+  /* title */
+  .title {
+    font-size: 30rpx;
+    font-weight: 600;
+    margin-bottom: 8rpx;
+  }
+  
+  /* content */
+  .content {
+    font-size: 26rpx;
+    color: #666;
+  }
+  
+  /* time */
+  .time {
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 10rpx;
+  }
+  .item {
+    position: relative; /* ⭐关键：让红点相对定位 */
+    background: #fff;
+    padding: 24rpx;
+    border-radius: 16rpx;
+    margin-bottom: 16rpx;
+  }
+  
+  /* 🔴 未读红点 */
+  .dot {
+    position: absolute;
+    top: 16rpx;
+    right: 16rpx;
+  
+    width: 14rpx;
+    height: 14rpx;
+    background: #ff4d4f;
+    border-radius: 50%;
+  
+    box-shadow: 0 0 0 4rpx rgba(255, 77, 79, 0.15);
+  }

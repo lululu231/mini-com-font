@@ -1,0 +1,43 @@
+<view class="container">
+
+<!-- 分类栏 -->
+<view class="tabs">
+  <view class="tab" data-type="all" bindtap="changeCategory">全部</view>
+  <view class="tab" data-type="event" bindtap="changeCategory">活动</view>
+  <view class="tab" data-type="community" bindtap="changeCategory">社团</view>
+  <view class="tab" data-type="remind" bindtap="changeCategory">提醒</view>
+  <view class="tab" data-type="social" bindtap="changeCategory">社交</view>
+</view>
+
+<!-- 列表 -->
+<view class="list">
+
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="item {{item.is_read ? '' : 'unread'}}"
+      data-id="{{item.id}}"
+      bindtap="markRead">
+
+        <!-- 🔴 红点角标 -->
+        <view wx:if="{{!item.is_read}}" class="dot"></view>
+
+        <!-- 标题 -->
+        <view class="title">
+            {{item.title}}
+        </view>
+
+        <!-- 内容 -->
+        <view class="content">
+            {{item.content}}
+        </view>
+
+        <!-- 时间 -->
+        <view class="time">
+            {{item.created_at}}
+        </view>
+
+        </view>
+  </block>
+
+</view>
+
+</view>

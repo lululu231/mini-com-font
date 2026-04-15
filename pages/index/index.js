@@ -1,4 +1,6 @@
 // index.js
+import {BASE_URL} from "../../constants/index.js"
+
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 import request  from '../../utils/request.js'
 Page({
@@ -41,10 +43,30 @@ Page({
   },
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail
-    const { nickName } = this.data.userInfo
-    this.setData({
-      "userInfo.avatarUrl": avatarUrl,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+  
+    wx.uploadFile({
+    url: BASE_URL + '/upload', // 改成你的后端地址
+    filePath: avatarUrl,
+    name: 'file',
+      success: (res) => {
+        const data = JSON.parse(res.data)
+  
+        const url = BASE_URL+data.url // 后端返回的图片地址
+        console.log('indexAv',url)
+        const { nickName } = this.data.userInfo
+        
+        this.setData({
+          "userInfo.avatarUrl": url,
+          hasUserInfo: nickName && url && url !== defaultAvatarUrl,
+        })
+      },
+      fail: (err) => {
+        console.log('头像上传失败', err)
+        wx.showToast({
+          title: '头像上传失败',
+          icon: 'none'
+        })
+      }
     })
   },
   onInputChange(e) {

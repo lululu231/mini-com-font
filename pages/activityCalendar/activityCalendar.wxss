@@ -1,0 +1,109 @@
+.calendar {
+    padding: 20rpx;
+  }
+  
+  /* .header {
+    text-align: center;
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+  } */
+  
+  .week {
+    display: flex;
+  }
+  
+  .week-item {
+    flex: 1;
+    text-align: center;
+    font-size: 24rpx;
+    color: #888;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .more {
+    font-size: 20rpx;
+    color: #999;
+    margin-top: 4rpx;
+  }
+  .day-item {
+    width: 14.28%;
+    min-height: 140rpx;
+    border: 1px solid #f0f0f0;
+    padding: 6rpx;
+    box-sizing: border-box;
+  }
+  
+  .date {
+    font-size: 22rpx;
+  }
+  
+  /* 活动状态 */
+  .event {
+    font-size: 20rpx;
+    margin-top: 4rpx;
+    border-radius: 6rpx;
+    padding: 2rpx 4rpx;
+  }
+  
+  /* 未开始 */
+  .event.upcoming {
+    background: #e6f4ff;
+    color: #1677ff;
+  }
+  
+  /* 进行中 */
+  .event.ongoing {
+    background: #f6ffed;
+    color: #52c41a;
+  }
+  
+  /* 已结束 */
+  .event.ended {
+    background: #f5f5f5;
+    color: #999;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+  }
+  
+  .title {
+    font-size: 32rpx;
+  }
+  
+  /* 弹窗 */
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  
+  .popup {
+    background: #fff;
+    margin: 200rpx auto;
+    width: 80%;
+    padding: 20rpx;
+    border-radius: 16rpx;
+  }
+  
+  .popup-title {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  .popup-item {
+    margin: 6rpx 0;
+  }
+  
+  .empty {
+    text-align: center;
+    color: #999;
+  }

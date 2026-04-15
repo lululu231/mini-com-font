@@ -12,7 +12,7 @@ Component({
             value:0
         },
         tabData:{
-            type:Object,
+            type:Array,
             value:[]
         }
   },
@@ -21,21 +21,32 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    innerTabData: []
   },
-
+  observers: {
+    tabData(newVal) {
+      const allItem = {
+        id: 0,
+        community_name: '全部'
+      };
+  
+      this.setData({
+        innerTabData: [allItem, ...(newVal || [])]
+      });
+    }
+  },
   /**
    * 组件的方法列表
    */
   methods: {
     handleTabClick(e) {
-      const index = e.currentTarget.dataset.index;
-  
-      // 1️⃣ 通知父组件
-      this.triggerEvent('change', { index });
-  
-      // ❌ 不建议这样（受控组件）
-      // this.setData({ curTab: index });
-    }
+        const index = e.currentTarget.dataset.index;
+        const item = this.data.innerTabData[index];
+      
+        this.triggerEvent('change', {
+          index,
+          communityId: item.id
+        });
+      }
   }
 })

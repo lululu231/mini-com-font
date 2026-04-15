@@ -1,12 +1,16 @@
-<!-- components/selectCommunity/selectCommunity.wxml -->
-<view class="tab-container">
+<scroll-view 
+  class="tab-container"
+  scroll-x="true"
+  scroll-with-animation="true"
+  show-scrollbar="false"
+>
   <view 
     class="tab-item {{curTab === index ? 'active' : ''}}"
-    wx:for="{{tabData}}"
+    wx:for="{{innerTabData}}"
     wx:key="index"
     data-index="{{index}}"
     bindtap="handleTabClick"
   >
-    {{item.name}}
+    {{item.community_name}}
   </view>
-</view>
+</scroll-view>

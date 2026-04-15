@@ -1,0 +1,70 @@
+<view class="calendar">
+
+<!-- 月份标题 -->
+<view class="header">
+  <text bindtap="prevMonth">◀</text>
+  <text class="title">{{year}}年{{month}}月</text>
+  <text bindtap="nextMonth">▶</text>
+</view>
+<!-- 星期 -->
+<view class="week">
+  <block wx:for="{{weeks}}" wx:key="*this">
+    <text class="week-item">{{item}}</text>
+  </block>
+</view>
+
+<!-- 日期格子 -->
+<view class="days">
+  <block wx:for="{{calendar}}" wx:key="index">
+    <view 
+      class="day-item" 
+      data-date="{{item.fullDate}}"
+      bindtap="onDayClick"
+    >
+      <text class="date">{{item.day}}</text>
+
+      <!-- ✅ 只显示前2个 -->
+      <block wx:for="{{item.events}}" wx:key="index">
+        <view class="event {{item.status}}">
+            {{item.title}}
+        </view>
+        </block>
+
+        <view wx:if="{{item.moreCount > 0}}" class="more">
+        +{{item.moreCount}}
+        </view>
+
+    </view>
+  </block>
+</view>
+
+</view>
+
+<view wx:if="{{showDetail}}" class="mask" bindtap="closeDetail">
+  <view class="popup" catchtap="stop">
+
+    <view class="popup-title">
+      {{selectedDate}} 活动
+    </view>
+
+    <block wx:if="{{selectedEvents.length > 0}}">
+      <block wx:for="{{selectedEvents}}" wx:key="index">
+        <view class="popup-item {{item.status}}">
+        <view class="title">
+            {{item.title}}（{{statusMap[item.status]}}）
+        </view>
+
+        <view class="time">
+            开始：{{item.startTime}}
+        </view>
+        <view class="time">
+            结束：{{item.endTime}}
+        </view>
+        </view>
+      </block>
+    </block>
+
+    <view wx:else class="empty">当天没有活动</view>
+
+  </view>
+</view>

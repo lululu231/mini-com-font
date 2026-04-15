@@ -1,4 +1,6 @@
 //创建新社团
+import {BASE_URL} from "../../../constants/index.js"
+
 import request from '../../utils/request.js'
 Page({
     data: {
@@ -68,7 +70,7 @@ Page({
       if (avatar_url) {
         uploadTasks.push(new Promise((resolve, reject) => {
           wx.uploadFile({
-            url: 'http://localhost:3000/upload',
+            url: BASE_URL + '/upload',
             filePath: avatar_url,
             name: 'file',
             // success(res) { resolve(JSON.parse(res.data).url); },
@@ -95,7 +97,7 @@ Page({
   
       uploadTasks.push(new Promise((resolve, reject) => {
         wx.uploadFile({
-          url: 'http://localhost:3000/upload',
+        url: BASE_URL + '/upload',
           filePath: proofFilePath,
           name: 'file',
         //   success(res) { resolve(JSON.parse(res.data).url); },

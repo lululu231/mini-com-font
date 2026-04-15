@@ -74,15 +74,26 @@
 
             <!-- ✅ 报名按钮 -->
             <button 
-            wx:if="{{item.status === 'upcoming'}}"
-            size="mini"
+            wx:if="{{item.canJoin}}"
             bindtap="joinActivity"
             data-id="{{item.id}}"
-            disabled="{{item.isJoined}}"
             >
-            {{item.isJoined ? '已报名' : '报名'}}
+            报名
             </button>
 
+            <!-- 取消报名 -->
+            <button 
+            wx:if="{{item.canCancel}}"
+            bindtap="cancelActivity"
+            data-id="{{item.id}}"
+            >
+            取消报名
+            </button>
+
+            <!-- 已开始或已结束 -->
+            <button wx:if="{{item.status !== 'upcoming'}}" disabled>
+            {{statusMap[item.status]}}
+            </button>
             </view>
 
   </view>

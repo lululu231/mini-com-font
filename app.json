@@ -23,10 +23,11 @@
     "pages/applyList/applyList",
     "pages/publishNotice/publishNotice",
     "pages/album/index",
-    "pages/album/detail",
     "pages/albumManage/albumManage",
     "pages/memberSelect/memberSelect",
-    "pages/acAll/acAll"
+    "pages/acAll/acAll",
+    "pages/activityCalendar/activityCalendar",
+    "pages/notification/notification"
   ],
   "window": {
     "navigationBarTextStyle": "black",

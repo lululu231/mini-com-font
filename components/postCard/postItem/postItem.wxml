@@ -1,31 +1,31 @@
 <!--components/postCard/postItem/postItem.wxml-->
 <view class="postCard" bind:tap="handleTap">
     <view class="postHeader">
-        <image src="{{post.userAvatar}}" mode="aspectFill" class="psotAvatar"></image>
+        <image src="{{post.avatar_url}}" mode="aspectFill" class="psotAvatar"></image>
         <view class="postHeaderS2">
             <view class="postInfo">
-                <view class="postName">{{post.userId}}</view>
-                <view class="postCommunity">{{post.communityId}}</view>
+                <view class="postName">{{post.nick_name}}</view>
+                <view class="postCommunity">{{post.community_name}}</view>
             </view>
-        <view class="createdAt"> {{post.createdAt}}</view>
+            <view class="createdAt">{{formattedTime}}</view>
         </view>
     </view>
     <view class="postMain">
     <view class="postContent">{{post.content}}</view>
     <view class="image-list">
-    <image 
-        wx:for="{{post.images}}" 
+        <image 
+        wx:for="{{images}}" 
         wx:key="index"
         src="{{item}}"
-        mode="widthFix"
+        mode="aspectFill"
         class="imgItem"
-    />
+        />
     </view>
     </view>
 </view>
     <view class="postBottom">
     <image src="/assets/image/点赞.png" mode="aspectFill" class="bottomImg"></image>
-    <view class="postLike">{{post.likeCount}}</view>
+    <view class="postLike">{{post.like_count}}</view>
     <image src="/assets/image/消息.png" mode="aspectFill" class="bottomImg"></image>
-    <view class="postLike">{{post.commentCount}}</view>
+    <view class="postLike">{{post.comment_count}}</view>
     </view>

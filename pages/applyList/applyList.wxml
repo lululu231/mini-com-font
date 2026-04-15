@@ -1,75 +1,80 @@
 <!-- pages/applyList/applyList.wxml -->
 <view class="container">
 
-<!-- tabs -->
-<view class="tabs">
-  <view 
-    wx:for="{{tabs}}"
-    wx:key="key"
-    class="tab {{currentTab === item.key ? 'active' : ''}}"
-    data-key="{{item.key}}"
-    bindtap="switchTab"
-  >
-    {{item.label}}
+  <!-- tabs -->
+  <view class="tabs">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="key"
+      class="tab {{currentTab === item.key ? 'active' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="switchTab"
+    >
+      {{item.label}}
+    </view>
   </view>
-</view>
 
-<!-- 批量操作 -->
-<view wx:if="{{selectedIds.length}}" class="batch-bar">
-  <text>已选 {{selectedIds.length}} 人</text>
-  <button size="mini" bindtap="batchApprove">通过</button>
-  <button size="mini" bindtap="batchReject">拒绝</button>
-</view>
+  <!-- 批量操作 -->
+  <view wx:if="{{selectedIds.length}}" class="batch-bar">
+    <text>已选 {{selectedIds.length}} 人</text>
+    <button size="mini" bindtap="batchApprove">通过</button>
+    <button size="mini" bindtap="batchReject">拒绝</button>
+  </view>
 
-<!-- 列表 -->
-<view class="list">
+  <!-- 列表 -->
+  <view class="list">
 
-  <view 
-    class="card"
-    wx:for="{{list}}"
-    wx:key="id"
-  >
+    <view
+      class="card"
+      wx:for="{{list}}"
+      wx:key="id"
+    >
 
-    <!-- 勾选 -->
-    <checkbox 
-      wx:if="{{item.status === 'pending'}}"
-      value="{{item.id}}"
-      checked="{{selectedIds.includes(item.id)}}"
-      bindtap="toggleSelect"
-    />
+      <!-- checkbox（只在待审核显示） -->
+      <checkbox
+        wx:if="{{item.status === 'pending'}}"
+        value="{{item.id}}"
+        checked="{{selectedIds.includes(item.id)}}"
+        bindchange="toggleSelect"
+      />
 
-    <!-- 头像 -->
-    <image class="avatar" src="{{item.avatar || defaultAvatar}}" />
+      <!-- 头像 -->
+      <image class="avatar" src="{{item.avatar || defaultAvatar}}" />
 
-    <!-- 信息 -->
-    <view class="info">
+      <!-- 信息 -->
+      <view class="info">
 
-      <view class="row">
-        <text class="name">{{item.name}}</text>
-        <text>{{item.gender === 'male' ? '♂️' : '♀️'}}</text>
-      </view>
+        <view class="row">
+          <text class="name">{{item.name}}</text>
+          <text>{{item.gender === 'male' ? '♂️' : item.gender === 'female' ? '♀️' : ''}}</text>
+        </view>
 
-      <view class="phone">{{item.maskPhone}}</view>
+        <!-- 手机 -->
+        <view class="phone">{{item.phone}}</view>
 
-      <view class="reason">申请理由：{{item.reason}}</view>
+        <!-- 申请时间 -->
+        <view class="time">申请时间：{{item.applyTime}}</view>
 
-      <view class="time">{{item.applyTime}}</view>
+        <!-- 状态 -->
+        <view class="status {{item.status}}">
+          {{statusMap[item.status]}}
+        </view>
 
-      <!-- 状态 -->
-      <view class="status {{item.status}}">
-        {{statusMap[item.status]}}
-      </view>
+        <!-- 操作按钮 -->
+        <view wx:if="{{item.status === 'pending'}}" class="actions">
+          <button size="mini" bindtap="approve" data-id="{{item.id}}">
+            通过
+          </button>
 
-      <!-- 操作 -->
-      <view wx:if="{{item.status === 'pending'}}" class="actions">
-        <button size="mini" bindtap="approve" data-id="{{item.id}}">通过</button>
-        <button size="mini" bindtap="reject" data-id="{{item.id}}">拒绝</button>
+          <button size="mini" bindtap="reject" data-id="{{item.id}}">
+            拒绝
+          </button>
+        </view>
+
       </view>
 
     </view>
 
   </view>
-
-</view>
 
 </view>

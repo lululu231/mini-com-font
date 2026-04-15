@@ -1,72 +1,54 @@
-<!-- pages/noticeList/noticeList.wxml -->
 <view class="container">
 
 <!-- 置顶公告 -->
-<view wx:if="{{topNotices.length}}" class="section">
-
+<view wx:if="{{topNotices.length}}">
   <view class="section-title">📌 置顶公告</view>
 
   <view 
     class="card top"
     wx:for="{{topNotices}}"
     wx:key="id"
-    bindtap="toggleDetail"
     data-id="{{item.id}}"
+    bindtap="toggleDetail"
   >
     <view class="header">
       <text class="title">{{item.title}}</text>
-      <text class="badge">重要</text>
-    </view>
-
-    <view class="meta">
-      <text>{{item.createTime}}</text>
-      <text wx:if="{{!item.read}}" class="unread">未读</text>
+      <text class="time">{{item.createTime}}</text>
     </view>
 
     <view wx:if="{{item.showDetail}}" class="content">
       {{item.content}}
     </view>
-  </view>
 
+    <!-- 附件 -->
+    <view wx:if="{{item.attachment}}" class="file">
+      📎 附件：{{item.attachment}}
+    </view>
+  </view>
 </view>
 
 <!-- 普通公告 -->
-<view class="section">
+<view class="section-title">📄 公告列表</view>
 
-  <view class="section-title">全部公告</view>
-
-  <view wx:if="{{notices.length}}">
-
-    <view 
-      class="card"
-      wx:for="{{notices}}"
-      wx:key="id"
-      bindtap="toggleDetail"
-      data-id="{{item.id}}"
-    >
-
-      <view class="header">
-        <text class="title">{{item.title}}</text>
-      </view>
-
-      <view class="meta">
-        <text>{{item.createTime}}</text>
-        <text wx:if="{{!item.read}}" class="unread">未读</text>
-      </view>
-
-      <view wx:if="{{item.showDetail}}" class="content">
-        {{item.content}}
-      </view>
-
-    </view>
-
+<view 
+  class="card"
+  wx:for="{{notices}}"
+  wx:key="id"
+  data-id="{{item.id}}"
+  bindtap="toggleDetail"
+>
+  <view class="header">
+    <text class="title">{{item.title}}</text>
+    <text class="time">{{item.createTime}}</text>
   </view>
 
-  <!-- 空状态 -->
-  <view wx:else class="empty">
-    暂无公告
+  <view wx:if="{{item.showDetail}}" class="content">
+    {{item.content}}
   </view>
 
+  <view wx:if="{{item.attachment}}" class="file">
+    📎 附件：{{item.attachment}}
+  </view>
 </view>
 
 </view>

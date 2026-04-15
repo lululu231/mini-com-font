@@ -37,21 +37,21 @@ Component({
         //     url: '/pages/communityStyle/communityStyle'
         //   });
         //   break;
-        // case 2:
-        //   wx.navigateTo({
-        //     url: '/pages/activityCalendar/activityCalendar'
-        //   });
-        //   break;
+        case 2:
+          wx.navigateTo({
+            url: '/pages/activityCalendar/activityCalendar'
+          });
+          break;
         case 3:
           wx.switchTab({
             url: '/pages/community/community'
           });
           break;
-        // case 4:
-        //   wx.navigateTo({
-        //     url: '/pages/notification/notification'
-        //   });
-        //   break;
+        case 4:
+          wx.navigateTo({
+            url: '/pages/notification/notification'
+          });
+          break;
       }
     }
   }

@@ -1,99 +1,104 @@
 // pages/forum/forum.js
-import { mockPosts ,mockTabList} from './mock.js'
+import request from '../../utils/request';
+
 Page({
   data: {
-        curTab:0,
-        curcommunityId:"c001",
-        //mock-tab社团数据
-        tabList: [],
-        //mock-帖子数据
-        postList:[],
+    curTab: 0,
+    curcommunityId: 0, // ✅ 默认0表示全部
+    tabList: [],
+    postList: [],
+    loading: false
   },
-  curcommunityIdCheck(curTab){
-        console.log('this.data.tabList',this.data.tabList)
-        const tab=this.data.tabList[curTab]
-        console.log('tab',tab)
-        return tab?tab.communityId:''
+
+  // 根据 tab 获取 communityId
+  curcommunityIdCheck(curTab) {
+    const tab = this.data.tabList[curTab]
+    console.log('tab',tab)
+    return tab ? tab.id : 0
   },
-  //点击tab切换
+
+  // 🔥 获取帖子列表（核心）
+  getPostList() {
+    const { curcommunityId } = this.data
+    console.log('curcommunityId',curcommunityId)
+    this.setData({ loading: true })
+
+    request({
+      url: '/topic/list',
+      method: 'GET',
+      data: {
+        community_id: curcommunityId || 0
+      }
+    })
+    .then(res => {
+      console.log('帖子列表', res)
+
+      
+        this.setData({
+          postList: res.data || []
+        })
+      
+    })
+    .catch(err => {
+      console.error('获取帖子失败', err)
+
+      wx.showToast({
+        title: '网络错误',
+        icon: 'none'
+      })
+    })
+    .finally(() => {
+      this.setData({ loading: false })
+    })
+  },
+
+  // 点击 tab
   handleTabChange(e) {
-    const { index } = e.detail;
-    console.log('e.detail',e.detail)
-    const curId=this.curcommunityIdCheck(index)
-    console.log('curId',curId)
+    const { index, communityId } = e.detail
+  
     this.setData({
       curTab: index,
-      curcommunityId:curId
-    });
-    console.log('this.data.curcommunityIdcurcommunityId',this.data.curcommunityId)
-    // 👉 这里顺便发请求（推荐）
-    //this.getListByTab(index);
+      curcommunityId: communityId // ✅ 直接用子组件给的
+    })
+  
+    this.getPostList()
   },
-  //创建新帖子
-  newpostTap(){
-    console.log('创建新帖子')
+  // 创建新帖子
+  newpostTap() {
     wx.navigateTo({
       url: '/pages/newPostPage/newPostPage',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    //  请求tabList数据
-        this.setData({
-            tabList:mockTabList,
-            postList:mockPosts
-        })
-        console.log(mockPosts,this.data.postList)
+
+  // 页面加载
+  onLoad() {
+    console.log('forum onLoad')
+
+    // 1️⃣ 获取社团列表
+    request({
+      url: '/community/all',
+      method: 'GET',
+    })
+    .then(res => {
+      console.log('社团数据', res.data)
+
+      const list = res.data || []
+
+      this.setData({
+        tabList: list,
+        curcommunityId: list.length ? list[0].id : 0 // ✅ 默认选第一个
+      })
+
+      // 2️⃣ 拉帖子
+      this.getPostList()
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  // 页面显示（返回时刷新）
   onShow() {
+    console.log('forum onShow')
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    // 👉 返回页面刷新列表（发帖后）
+    this.getPostList()
   }
 })

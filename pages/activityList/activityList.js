@@ -15,7 +15,8 @@ Page({
         'upcoming': '未开始',
         'ongoing': '进行中',
         'ended': '已结束'
-    }
+    },
+    communityId:1
   },
 
   onLoad() {
@@ -29,27 +30,71 @@ Page({
   },
   joinActivity(e) {
     const eventId = e.currentTarget.dataset.id;
-  
+    console.log('eventId',eventId)
+    const userId = wx.getStorageSync('userInfo').userId; // ✅ 从缓存拿
+    console.log('userId',userId)
     request({
       url: '/event/join',
       method: 'POST',
       data: {
-        eventId
+        eventId,
+        userId
       }
     })
-      .then(() => {
-        wx.showToast({
-          title: '报名成功',
-          icon: 'success'
-        });
+      .then(res => {
+        if (res.code === 0) {
+          wx.showToast({
+            title: '报名成功',
+            icon: 'success'
+          });
   
-        // ✅ 刷新列表（最简单粗暴）
-        this.fetchActivities();
+          this.fetchActivities();
+        } else {
+          wx.showToast({
+            title: res.message || '报名失败',
+            icon: 'error'
+          });
+        }
       })
       .catch(err => {
         console.error(err);
         wx.showToast({
           title: '报名失败',
+          icon: 'error'
+        });
+      });
+  },
+  cancelActivity(e) {
+    const eventId = e.currentTarget.dataset.id;
+    const userId = wx.getStorageSync('userInfo').userId;
+  
+    request({
+      url: '/event/cancelEvent', // ✅ 改成你的新接口
+      method: 'POST',
+      data: {
+        eventId,
+        userId
+      }
+    })
+      .then(res => {
+        if (res.code === 0) {
+          wx.showToast({
+            title: '已取消报名',
+            icon: 'success'
+          });
+  
+          this.fetchActivities();
+        } else {
+          wx.showToast({
+            title: res.message || '取消失败',
+            icon: 'error'
+          });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        wx.showToast({
+          title: '取消失败',
           icon: 'error'
         });
       });
@@ -76,7 +121,8 @@ Page({
       method: 'GET',
       data: {
         status: 'approved' ,// 只查审核通过
-        communityId:wx.getStorageSync('curComId').id
+        communityId:wx.getStorageSync('curComId').id,
+        userId: wx.getStorageSync('userInfo').userId // ✅ 必加
       }
     })
       .then(res => {
@@ -87,22 +133,28 @@ Page({
 
         // ✅ 计算状态
         list = list.map(item => {
-          const start = new Date(item.start_time);
-          const end = new Date(item.end_time);
-
-          let status = '';
-          if (now < start) status = 'upcoming';
-          else if (now >= start && now <= end) status = 'ongoing';
-          else status = 'ended';
-
-          return {
-            ...item,
-            status,
-            // 顺便格式化一下给页面用（建议）
-            startTime: this.formatTime(start),
-            endTime: this.formatTime(end)
-          };
-        });
+            const start = new Date(item.start_time);
+            const end = new Date(item.end_time);
+          
+            let status = '';
+            if (now < start) status = 'upcoming';
+            else if (now >= start && now <= end) status = 'ongoing';
+            else status = 'ended';
+          
+            return {
+              ...item,
+              status,
+          
+              // ✅ 新增：是否可报名
+              canJoin: status === 'upcoming' && item.isJoined == 0,
+          
+              // ✅ 是否可取消（你可以顺手一起做）
+              canCancel: status === 'upcoming' && item.isJoined == 1,
+          
+              startTime: this.formatTime(start),
+              endTime: this.formatTime(end)
+            };
+          });
         
         // ✅ tab 过滤
         const result =

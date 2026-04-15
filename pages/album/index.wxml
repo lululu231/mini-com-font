@@ -1,24 +1,78 @@
 <view class="container">
 
-<view class="title">社团相册</view>
+<!-- 列表模式 -->
+<block wx:if="{{!currentAlbumId}}">
 
-<view class="group-list">
-  <view 
-    class="group-card"
-    wx:for="{{albumGroups}}"
-    wx:key="id"
-    data-group="{{item}}"
-    bindtap="goDetail"
-  >
-    <!-- 封面 -->
-    <image class="cover" src="{{item.cover}}" mode="aspectFill" />
-
-    <!-- 信息 -->
-    <view class="info">
-      <text class="name">{{item.activityName}}</text>
-      <text class="count">{{item.photos.length}} 张照片</text>
-    </view>
+  <view class="header">
+    <view class="title">社团风采</view>
+    <!-- <button class="add-btn" bindtap="addGroup">+ 新建分组</button> -->
   </view>
+
+  <!-- 相册列表 -->
+  <block wx:for="{{albumGroups}}" wx:key="id">
+    <view class="group-card" bindtap="enterAlbum" data-id="{{item.id}}">
+
+      <view class="group-header">
+        <text class="group-name">{{item.activityName}}</text>
+
+        <button size="mini" bindtap="uploadPhoto" data-id="{{item.id}}">
+          上传
+        </button>
+        <!-- <button
+        size="mini"
+        class="button"
+        type="warn"
+        data-id="{{item.id}}"
+        bindtap="deleteGroup"
+        >
+      删除
+        </button> -->
+      </view>
+
+      <!-- 缩略图（只显示cover） -->
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="group-actions">
+    
+     </view>
+    </view>
+  </block>
+
+</block>
+<!-- 详情模式 -->
+<block wx:else>
+
+<view class="header">
+  <button bindtap="backToList">← 返回</button>
+  <view class="title">相册详情</view>
 </view>
+
+<!-- 上传 -->
+<button bindtap="uploadPhoto" data-id="{{currentAlbumId}}">
+  上传照片
+</button>
+
+<!-- 照片墙 -->
+<view class="photo-grid">
+  <block wx:for="{{photos}}" wx:key="id">
+    <view class="photo-item">
+       
+      <image
+        src="{{item.url}}"
+        class="photo"
+        data-url="{{item.url}}"
+        bindtap="previewImage"
+      />
+
+      <view
+        class="delete-btn"
+        data-photoid="{{item.id}}"
+        bindtap="deletePhoto"
+      >×</view>
+
+    </view>
+  </block>
+</view>
+
+</block>
 
 </view>
